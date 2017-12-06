@@ -28,28 +28,30 @@ body main .fin_bild img {
 }
 
 /* color for player*/
-  .black{
+.color_chosen .black{
     background-color: black;
   
   }
   
-  .white{
+  .color_chosen .white{
     background-color: white;
   }
   
-  .red{
+  .color_chosen .red{
     background-color: red;
   }
   
-  .yellow{
+  .color_chosen .yellow{
     background-color: yellow;
   }
   .color_chosen {
     margin-top: 20px;
   }
+  .color_chosen .btn{
+    border-radius:4px !important;
+  }
   .color_chosen .color {
     border: 1px solid lightgray;
-    border-radius: 0rem;
     margin: 10px;
   }
   .color_chosen .play1color {
