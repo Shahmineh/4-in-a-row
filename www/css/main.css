@@ -26,3 +26,20 @@ body main .fin_bild img {
   width: 20vw;
   margin: auto;
 }
+
+.black{
+  background-color: black;
+  color:white;
+}
+
+.white{
+  background-color: white;
+}
+
+.red{
+  background-color: red;
+}
+
+.yellow{
+  background-color: yellow;
+}

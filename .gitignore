@@ -10,3 +10,6 @@ www/index.html
 www/main.html
 www/start.less
 www/start.css
+.DS_Store
+www/.DS_Store
+www/.DS_Store
