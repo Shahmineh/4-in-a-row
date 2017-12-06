@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+main.css
+all.css
+header.css
+style.css
+main.css
+footer.css
+variables.css
