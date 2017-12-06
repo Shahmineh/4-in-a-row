@@ -1,127 +1,176 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/libs/bootstrap-4-beta.css">
     <!-- Application specific CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Start<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Spela</a>
-            <a class="nav-item nav-link" href="#">High score</a>
             <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesModal">Spelregler</a>
 
-           <!-- Button trigger modal
-            <button type="button" data-toggle="modal" data-target="#rulesModal" class="btn btn-default navbar-btn">Visa spelreglerna
-            </button> -->
+</head>
 
-            <!-- Modal -->
-            <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-                  </div>
-                  <div class="modal-body">
-
-                    <h1>Spelregler</h1>
-                    <p>För att vinna ska spelaren få fyra brickor i rad. Antingen
-                      uppåt, åt höger, åt vänster eller diagonalt. Spelaren som först uppnått något av följande vinner spelet.
-                    </p>
-
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Start
+            <span class="sr-only">(current)</span>
+          </a>
+          <a class="nav-item nav-link" href="#">Spela</a>
+          <a class="nav-item nav-link" href="#">High score</a>
+          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesModal">Spelreglar</a>
 
 
-                  </div>
+          <!-- Modal -->
+          <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+
+                </div>
+                <div class="modal-body">
+
+                  <h1>Spelregler</h1>
+                  <p>För att vinna ska spelaren få fyra brickor i rad. Antingen uppåt, åt höger, åt vänster eller diagonalt.
+                    Spelaren som först uppnått något av följande vinner spelet.
+                  </p>
+
 
 
                 </div>
-              </div>
-            </div>
 
 
-
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        <div class="row start">
-          <div class="col-12 col-sm-8 ">
-            <div class="card welcome">
-              <div class="card-body">
-                <h3 class="card-title">Välkommen!</h3>
-                <p class="card-text">Spela det klassiska spelet 4iRod online!</p>
-                <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#enteringNameModal">Spela</a>
               </div>
             </div>
           </div>
-          <div class="col-12 col-sm-4 ">
-            <div class="card fin_bild">
-              <div class="card-body">
-                <img src="/img/fin_bild.png" alt="Fin Bild">
-              </div>
-            </div>
-          </div>
+
+
 
         </div>
       </div>
+    </nav>
+  </header>
 
-      <!-- Modul for entering player name and difficulties -->
-      <div class="modal fade" id="enteringNameModal" tabindex="-1" role="dialog" aria-labelledby="enteringNameModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="Please enter your name and difficulty">Please enter your name and difficulty</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+  <main>
+    <div class="container">
+      <div class="row start">
+        <div class="col-12 col-sm-8 ">
+          <div class="card welcome">
+            <div class="card-body">
+              <h3 class="card-title">Välkommen!</h3>
+              <p class="card-text">Spela det klassiska spelet 4iRod online!</p>
+              <a href="#" class="btn btn-primary float-right" data-toggle="modal" data-target="#enteringNameModal">Spela</a>
             </div>
-            <div class="modal-body">
-              <!-- Game info -->
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-6">
-                    <label for="player1name">Player 1:</label>
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon3">Name:</span>
-                      <input type="text" class="form-control" id="player1name">
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 ">
+          <div class="card fin_bild">
+            <div class="card-body">
+              <img src="/img/fin_bild.png" alt="Fin Bild">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modul for entering player name and difficulties -->
+    <div class="modal fade" id="enteringNameModal" tabindex="-1" role="dialog" aria-labelledby="enteringNameModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="Please enter your name and difficulty">Please enter your name and difficulty</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Game info -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="player1name">Player 1:</label>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Name:</span>
+                    <input type="text" class="form-control" id="player1name">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="player2name">Player 2:</label>
+                  <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Name:</span>
+                    <input type="text" class="form-control" id="player2name">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      Spela mot datorn
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Lätt</a>
+                      <a class="dropdown-item" href="#">Svårt</a>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <label for="player2name">Player 2:</label>
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon3">Name:</span>
-                      <input type="text" class="form-control" id="player2name">
+                </div>
+                <div class="col-md-6">
+                  <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      Spela mot datorn
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Lätt</a>
+                      <a class="dropdown-item" href="#">Svårt</a>
+
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- //game info -->
+
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Starta spelet</button>
+            <div class="row color_chosen">
+              <div class="btn-toolbar play1color" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn black color"></button>
+                  <button type="button" class="btn color white"></button>
+                  <button type="button" class="btn color red"></button>
+                  <button type="button" class="btn color yellow"></button>
+                </div>
+                <div class="btn-group mr-2 play2color" role="group" aria-label="Second group">
+                  <button type="button" class="btn black color"></button>
+                  <button type="button" class="btn color white"></button>
+                  <button type="button" class="btn color red"></button>
+                  <button type="button" class="btn color yellow"></button>
+                </div>
+              </div>
             </div>
+            <!-- //game info -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Starta spelet</button>
           </div>
         </div>
-      </div> <!-- // Modul for entering playername -->
+      </div>
+    </div>
+    <!-- // Modul for entering playername -->
 
-    </main>
+  </main>
 
     <footer>
       <div class="container">
@@ -140,13 +189,14 @@
             Ring oss! 040 - 60 96 09
           </div>
       </div>
-    </footer>
-    <!-- JavaScript libraries -->
-    <script src="/jsonflex.js"></script>
-    <script src="/js/libs/jquery-3.2.1.js"></script>
-    <script src="/js/libs/popper-1.11.0.js"></script>
-    <script src="/js/libs/bootstrap-4-beta.js"></script>
-    <!-- Application specific JavaScript -->
-    <script src="/js/main.js"></script>
-  </body>
+  </footer>
+  <!-- JavaScript libraries -->
+  <script src="/jsonflex.js"></script>
+  <script src="/js/libs/jquery-3.2.1.js"></script>
+  <script src="/js/libs/popper-1.11.0.js"></script>
+  <script src="/js/libs/bootstrap-4-beta.js"></script>
+  <!-- Application specific JavaScript -->
+  <script src="/js/main.js"></script>
+</body>
+
 </html>

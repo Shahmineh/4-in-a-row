@@ -26,3 +26,38 @@ body main .fin_bild img {
   width: 20vw;
   margin: auto;
 }
+
+/* color for player*/
+.color_chosen .black{
+    background-color: black;
+  
+  }
+  
+  .color_chosen .white{
+    background-color: white;
+  }
+  
+  .color_chosen .red{
+    background-color: red;
+  }
+  
+  .color_chosen .yellow{
+    background-color: yellow;
+  }
+  .color_chosen {
+    margin-top: 20px;
+  }
+  .color_chosen .btn{
+    border-radius:4px !important;
+  }
+  .color_chosen .color {
+    border: 1px solid lightgray;
+    margin: 10px;
+  }
+  .color_chosen .play1color {
+    margin-left: 30px;
+  }  
+  .color_chosen .play2color {
+    margin-left: 86px;
+  }  
+
