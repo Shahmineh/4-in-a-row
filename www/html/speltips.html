@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/css/libs/bootstrap-4-beta.css">
+    <link rel="stylesheet" href="/css/libs/freelancer.min.css">
+    <!-- Fonts for freelance theme -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
     <!-- Application specific CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-  </head>
-  <body>
-    
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/">Start
+            <span class="sr-only">(current)</span>
+          </a>
+          <a class="nav-item nav-link" href="#">Spela</a>
+          <a class="nav-item nav-link" href="/html/highscore.html">High score</a>
+          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesModal">Spelregler</a>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+
+                </div>
+                <div class="modal-body">
+
+                  <h1>Spelregler</h1>
+                  <p>För att vinna ska spelaren få fyra brickor i rad. Antingen uppåt, åt höger, åt vänster eller diagonalt.
+                    Spelaren som först uppnått något av följande vinner spelet.
+                  </p>
 
 
 
-    yep
+                </div>
 
 
-<!-- Place this code where you'd like the game to appear -->
-<div class="miniclip-game-embed" data-game-name="flip-master" data-theme="5" data-width="488" data-height="670" data-language="en"><a href="http://www.miniclip.com/games/flip-master/">Play Flip Master</a></div>
-<p style="text-align:center;"><a href="http://www.miniclip.com/games/flip-master/" target="_blank">Play Flip Master</a> / More <a href="http://www.miniclip.com/games/genre-1151/" target="_blank">Stunt games</a></p>
-
-<!-- Insert this code before your </body> tag -->
-<script src="//static.miniclipcdn.com/js/game-embed.js"></script>
+              </div>
+            </div>
+          </div>
 
 
 
-    <!-- Place this code where you'd like the game to appear -->
-<div class="miniclip-game-embed" data-game-name="bubble-trouble" data-theme="5" data-width="700" data-height="450" data-language="en"><a href="http://www.miniclip.com/games/bubble-trouble/">Play Bubble Trouble</a></div>
-<p style="text-align:center;"><a href="http://www.miniclip.com/games/bubble-trouble/" target="_blank">Play Bubble Trouble</a> / More <a href="http://www.miniclip.com/games/genre-1/" target="_blank">Puzzle games</a></p>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-<!-- Insert this code before your </body> tag -->
-<script src="//static.miniclipcdn.com/js/game-embed.js"></script>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-center mt-4">
+            <div class="miniclip-game-embed" data-game-name="flip-master" data-theme="5" data-width="488" data-height="670" data-language="en"><a href="http://www.miniclip.com/games/flip-master/">Play Flip Master</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </main>
 
+    <footer>
+      <div class="container pt-3">
+        <div class="row">
+          <div class="col-sm-4">
+            <address>
+              <strong>Spelverket</strong> <br>
+              Industrigatan 53 <br>
+              212 55 Malmö
+            </address>
+          </div>
+          <div class="col-sm-4">
+            <a href="mailto:info@spelverket.se" title="Maila spelverket">info@spelverket.se</a>
+          </div>
+          <div class="col-sm-4">
+            Ring oss! 040 - 60 96 09
+          </div>
+      </div>
+  </footer>
+  <!-- JavaScript libraries -->
+  <script src="/jsonflex.js"></script>
+  <script src="/js/libs/jquery-3.2.1.js"></script>
+  <script src="/js/libs/popper-1.11.0.js"></script>
+  <script src="/js/libs/bootstrap-4-beta.js"></script>
+  <script src="/js/libs/freelancer.js"></script>
+  <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
+  <!-- Application specific JavaScript -->
+  <script src="/js/main.js"></script>
+</body>
 
-<!-- Place this code where you'd like the game to appear -->
-<div class="miniclip-game-embed" data-game-name="8-ball-pool-multiplayer" data-theme="5" data-width="1010" data-height="640" data-language="en"><a href="http://www.miniclip.com/games/8-ball-pool-multiplayer/">Play 8 Ball Pool</a></div>
-<p style="text-align:center;"><a href="http://www.miniclip.com/games/8-ball-pool-multiplayer/" target="_blank">Play 8 Ball Pool</a> / More <a href="http://www.miniclip.com/games/genre-3/" target="_blank">Sports games</a></p>
-
-<!-- Insert this code before your </body> tag -->
-<script src="//static.miniclipcdn.com/js/game-embed.js"></script>
-
-
-
-
-    <!-- JavaScript libraries -->
-    <script src="/jsonflex.js"></script>
-    <script src="/js/libs/jquery-3.2.1.js"></script>
-    <script src="/js/libs/popper-1.11.0.js"></script>
-    <script src="/js/libs/bootstrap-4-beta.js"></script>
-    <!-- Application specific JavaScript -->
-    <script src="/js/main.js"></script>
-  </body>
 </html>
