@@ -9,31 +9,29 @@ main {
   //Game design only //
   div.board-holder {
     overflow: hidden;
+    border-radius: 10px;
+    .board-game-shadow;
   }
   div.board {
-    background: blue;
-    border-radius: 10px;
-    display: none;
-    width: 490px;
-    height: 420px;
-    padding: 10px 5px 10px 5px;
-    transform-orgin: 0 0;
+    // display: none;
+    width: 1050px;
+    height: 900px;
+    transform-origin: 0 0;
+  }
+  div.bullet-holder {
+    width: 150px;
+    height: 150px;
+    float: left;
   }
   div.bullet {
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    float: float;
+    width: 130px;
+    height: 130px;
+    margin: 10px;
   }
   div.empty {
+    .board-game-shadow-inset;
     background: white;
-  }
-  div.board-footer {
-    background: blue;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 10px;
-    width: 10%;
   }
   // /Game design
 
