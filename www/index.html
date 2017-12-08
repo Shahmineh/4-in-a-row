@@ -21,8 +21,10 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
-      <a class="navbar-brand" href="/"><img class="logo" src="/img/logo-final.png"></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <a class="navbar-brand" href="/">
+        <img class="logo" src="/img/logo.png">
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -194,7 +196,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-4 ">
-          <div class="card fin_bild bg-primary border-0">
+          <div class="card fin_bild">
             <div class="card-body">
               <img src="/img/fin_bild.png" alt="Fin Bild">
             </div>
@@ -263,7 +265,7 @@
             <!-- Game info -->
             <div class="row player_info">
               <div class="col-12 col-sm-6">
-                <div class="card" >
+                <div class="card">
                   <div class="card-body">
                     <h4 class="card-title" for="player1name">Player 1:</h4>
                     <div class="input-group">
@@ -296,37 +298,37 @@
                 </div>
               </div>
               <div class="col-12 col-sm-6">
-                  <div class="card" >
-                      <div class="card-body">
-                        <h4 class="card-title" for="player1name">Player 2:</h4>
-                        <div class="input-group">
-                          <span class="input-group-addon" id="basic-addon3">Name:</span>
-                          <input type="text" class="form-control" id="player1name">
-                        </div>
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title" for="player1name">Player 2:</h4>
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon3">Name:</span>
+                      <input type="text" class="form-control" id="player1name">
+                    </div>
 
-                        <div class="dropdown">
-                          <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Spela mot datorn
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Lätt</a>
-                            <a class="dropdown-item" href="#">Svårt</a>
-                          </div>
-                        </div>
-                        <div class="color_chosen">
-                          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                            <div class="btn-group mr-2" role="group" aria-label="First group">
-                              <button type="button" class="btn btn-dark color black"></button>
-                              <button type="button" class="btn btn-light color white"></button>
-                              <button type="button" class="btn btn-danger color red"></button>
-                              <button type="button" class="btn btn-warning color yellow"></button>
-                            </div>
-                          </div>
-                        </div>
-
+                    <div class="dropdown">
+                      <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Spela mot datorn
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Lätt</a>
+                        <a class="dropdown-item" href="#">Svårt</a>
                       </div>
                     </div>
+                    <div class="color_chosen">
+                      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                          <button type="button" class="btn btn-dark color black"></button>
+                          <button type="button" class="btn btn-light color white"></button>
+                          <button type="button" class="btn btn-danger color red"></button>
+                          <button type="button" class="btn btn-warning color yellow"></button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </div>
             <!-- //game info -->
@@ -346,7 +348,9 @@
             <div class="card">
               <img class="card-img-top" src="/img/placeholder-games.jpg" alt="Card image cap">
               <div class="card-body">
-                <a href="/html/speltips.html"><h4 class="card-title text-center">Flip master</h4></a>
+                <a href="/html/speltips.html">
+                  <h4 class="card-title text-center">Flip master</h4>
+                </a>
               </div>
             </div>
             <div class="card">
