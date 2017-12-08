@@ -11,29 +11,37 @@ main {
     overflow: hidden;
     border-radius: 10px;
     .board-game-shadow;
-  h3{
-    color: white !important;
- // highscore
+  }
+
  .highscore_page{
    background-color: #18bc9c !important;
- 
   }
+
   div.board {
     // display: none;
     width: 1050px;
     height: 900px;
     transform-origin: 0 0;
   }
+
   div.bullet-holder {
     width: 150px;
     height: 150px;
     float: left;
   }
+
   div.bullet {
     border-radius: 50%;
     width: 130px;
     height: 130px;
     margin: 10px;
+  }   
+      
+  div.empty {
+    .board-game-shadow-inset;
+    background: white;
+  }
+
   .highscore_table{
     .nav-tabs{
       a{
@@ -43,21 +51,17 @@ main {
         color:#2c3e50;
       }
     }
-    .tab-content{
-      .list-group-item{
-        background-color: #18bc9c !important;
-        color:white;
-        border-color: white;
-      }
+  }
+  
+  .tab-content{
+    .list-group-item{
+      background-color: #18bc9c !important;
+      color:white;
+      border-color: white;
     }
-  }   
-      
-    
   }
-  div.empty {
-    .board-game-shadow-inset;
-    background: white;
-  }
+
+}
   // /Game design
 
 
