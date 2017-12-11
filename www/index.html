@@ -14,6 +14,9 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+  <!-- Fontawsome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Application specific CSS -->
   <link rel="stylesheet" href="/css/style.css">
 
@@ -21,52 +24,54 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <a class="navbar-brand" href="/">
-        <img class="logo" src="/img/logo-final.png">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="/">Start
-            <span class="sr-only">(current)</span>
-          </a>
-          <a class="nav-item nav-link" href="#">Spela</a>
-          <a class="nav-item nav-link" href="/html/highscore.html">High score</a>
-          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesModal">Spelregler</a>
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-info text-uppercase">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img class="logo" src="/img/logo-final.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav ml-auto">
+            <a class="nav-item nav-link active" href="/">Start
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-item nav-link" href="#">Spela</a>
+            <a class="nav-item nav-link" href="/html/highscore.html">High score</a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesModal">Spelregler</a>
 
 
-          <!-- Modal -->
-          <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+            <!-- Modal -->
+            <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+
+                  </div>
+                  <div class="modal-body">
+
+                    <h1>Spelregler</h1>
+                    <p>För att vinna ska spelaren få fyra brickor i rad. Antingen uppåt, åt höger, åt vänster eller diagonalt.
+                      Spelaren som först uppnått något av följande vinner spelet.
+                    </p>
+
+
+
+                  </div>
+
 
                 </div>
-                <div class="modal-body">
-
-                  <h1>Spelregler</h1>
-                  <p>För att vinna ska spelaren få fyra brickor i rad. Antingen uppåt, åt höger, åt vänster eller diagonalt.
-                    Spelaren som först uppnått något av följande vinner spelet.
-                  </p>
-
-
-
-                </div>
-
-
               </div>
             </div>
+
+
+
           </div>
-
-
-
         </div>
       </div>
     </nav>
