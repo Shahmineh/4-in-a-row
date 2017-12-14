@@ -25,10 +25,16 @@ class Player extends Base {
     isAI() {
         if (!this.ai) { return "checked" };
     }
+
     click(element, instances) {
-       
-        // color
+        if(element.hasClass('color')){
+            $('.color').removeClass('active');
+            
+          }
+        
     }
+
+    
 
     keyup(element, instances, event) {
         // player's names
@@ -40,7 +46,7 @@ class Player extends Base {
          // player difficulty
     }
 
-
+   
 
 
 
