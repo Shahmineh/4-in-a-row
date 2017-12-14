@@ -82,8 +82,8 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-          <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#enteringNameModal">Spela</a>
-        </div>
+            <a href="#" class="btn btn-secondary spela-btn" data-toggle="modal" data-target="#enteringNameModal">Spela</a>
+          </div>
 
         </div>
         <div class="row">
@@ -281,77 +281,17 @@
           <div class="modal-body">
             <!-- Game info -->
             <div class="row player_info">
-              <div class="col-12 col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title" for="player1name">Player 1:</h4>
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon3">Name:</span>
-                      <input type="text" class="form-control" id="player1name">
-                    </div>
-
-                    <div class="dropdown">
-                      <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Spela mot datorn
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Lätt</a>
-                        <a class="dropdown-item" href="#">Svårt</a>
-                      </div>
-                    </div>
-                    <div class="color_chosen">
-                      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-2" role="group" aria-label="First group">
-                          <button type="button" class="btn btn-dark color black"></button>
-                          <button type="button" class="btn btn-light color white"></button>
-                          <button type="button" class="btn btn-danger color red"></button>
-                          <button type="button" class="btn btn-warning color yellow"></button>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+              <div class="col-12 col-sm-6 p1-info">
+                
               </div>
-              <div class="col-12 col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title" for="player1name">Player 2:</h4>
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon3">Name:</span>
-                      <input type="text" class="form-control" id="player1name">
-                    </div>
-
-                    <div class="dropdown">
-                      <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        Spela mot datorn
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Lätt</a>
-                        <a class="dropdown-item" href="#">Svårt</a>
-                      </div>
-                    </div>
-                    <div class="color_chosen">
-                      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                        <div class="btn-group mr-2" role="group" aria-label="First group">
-                          <button type="button" class="btn btn-dark color black"></button>
-                          <button type="button" class="btn btn-light color white"></button>
-                          <button type="button" class="btn btn-danger color red"></button>
-                          <button type="button" class="btn btn-warning color yellow"></button>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+              <div class="col-12 col-sm-6 p2-info">
+                
               </div>
             </div>
             <!-- //game info -->
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id= "start-game" data-dismiss="modal">Starta spelet</button>
+            <button type="button" class="btn btn-primary start-game" data-dismiss="modal">Starta spelet</button>
           </div>
         </div>
       </div>
@@ -365,6 +305,10 @@
   <script src="/js/libs/bootstrap-4-beta.js"></script>
   <script src="/js/libs/freelancer.js"></script>
   <!-- Application specific JavaScript -->
+  <script src="/js/classes/base.class.js"></script>
+  <script src="/js/classes/game.class.js"></script>
+  <script src="/js/classes/board.class.js"></script>
+  <script src="/js/classes/player.class.js"></script>
   <script src="/js/main.js"></script>
 </body>
 

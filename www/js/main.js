@@ -1,3 +1,22 @@
+// test code for class Player
+$('.spela-btn').on('click', function(){
+  let player1 = new Player({name:"p1", color:"c1", ai:true, difficulty:1});
+  let player2 = new Player({name:"p2", color:"c2", ai:false, difficulty:2});
+  player1.render('.p1-info');
+  player2.render('.p2-info');
+});
+
+// test code for class Player
+
+
+
+let game;
+
+JSON._classes(Game, Board, Player);
+
+
+
+
 
 // Scaling function so the board fits the browser widnow
 function scale(){
@@ -24,3 +43,4 @@ function scale(){
 scale();
 // Run every time the size changes
 $(window).resize(scale);
+
