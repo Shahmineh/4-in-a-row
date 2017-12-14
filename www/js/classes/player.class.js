@@ -8,16 +8,16 @@ class Player extends Base {
         this.difficulty = config.difficulty;
     }
 
-    render(el){
+    render(el) {
         super.render(el);
 
         let levelEl = $(el).find(".player-difficulty");
-        if(levelEl.length>0){
+        if (levelEl.length > 0) {
             levelEl.val(this.difficulty);
         }
-        
+
         let colorEl = $(el).find(".color." + this.color);
-        if(colorEl.length>0){
+        if (colorEl.length > 0) {
             colorEl.addClass("active");
         }
     }
@@ -25,8 +25,22 @@ class Player extends Base {
     isAI() {
         if (!this.ai) { return "checked" };
     }
+    click(element, instances) {
+       
+        // color
+    }
 
-    
+    keyup(element, instances, event) {
+        // player's names
+
+    }
+
+    change(element, instances){
+         // .form-check-input 
+         // player difficulty
+    }
+
+
 
 
 
