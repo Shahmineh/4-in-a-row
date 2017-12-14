@@ -1,7 +1,7 @@
 // test code for class Player
 $('.spela-btn').on('click', function(){
-  let player1 = new Player({name:"p1", color:"c1", ai:true, difficulty:1});
-  let player2 = new Player({name:"p2", color:"c2", ai:false, difficulty:2});
+  let player1 = new Player({name:"p1", color:"red", ai:true, difficulty:1});
+  let player2 = new Player({name:"p2", color:"yellow", ai:false, difficulty:2});
   player1.render('.p1-info');
   player2.render('.p2-info');
 });

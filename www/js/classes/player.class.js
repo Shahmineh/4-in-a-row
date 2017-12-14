@@ -15,6 +15,11 @@ class Player extends Base {
         if(levelEl.length>0){
             levelEl.val(this.difficulty);
         }
+        
+        let colorEl = $(el).find(".color." + this.color);
+        if(colorEl.length>0){
+            colorEl.addClass("active");
+        }
     }
 
     isAI() {
@@ -22,6 +27,10 @@ class Player extends Base {
     }
 
     
+
+
+
+
 
 
     template() {
