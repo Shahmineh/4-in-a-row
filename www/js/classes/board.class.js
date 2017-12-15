@@ -49,12 +49,12 @@ class Board {
     // MouseEnter func
     $(document).on('mouseenter','.empty',function(){
       let col = $(this).attr('data-col');
-      $(this).removeClass('empty').addClass(`player1-hover`);
+      $(this).removeClass('empty').addClass('player'+that.currentPlayerNo+'-hover');
     });
 
-    $(document).on('mouseleave','.player1-hover',function(){
+    $(document).on('mouseleave','.board-col',function(){
       let col = $(this).attr('data-col');
-      $(this).removeClass('player1-hover').addClass('empty');
+      $(this).removeClass('player'+that.currentPlayerNo+'-hover').addClass('empty');
     });
 
     $(document).on('click','.board-col', function(){
@@ -62,12 +62,12 @@ class Board {
       if(that.makeMove(col, that.currentPlayerNo)){
         that.renderBoard();
         // Short hand If statement
-        // that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
-        if (that.currentPlayerNo == 1) {
-          that.currentPlayerNo = 2;
-        } else {
-          that.currentPlayerNo = 1;
-        }
+        that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
+        // if (that.currentPlayerNo == 1) {
+        //   that.currentPlayerNo = 2;
+        // } else {
+        //   that.currentPlayerNo = 1;
+        // }
       }
     });
 
