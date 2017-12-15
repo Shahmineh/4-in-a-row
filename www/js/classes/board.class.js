@@ -13,7 +13,7 @@ createBoard() {
   for (let i = 0; i < this.rows; i++) {
     let row = $('<div>').addClass('board-row');
     for (let j = 0; j < this.cols; j++) {
-      let col = $('<div>').addClass('board-col empty');
+      let col = $('<div>').addClass('board-col empty').attr('data-row', i).attr('data-col', j);
       row.append(col); // Magic
     }
     holder.append(row);
