@@ -17,9 +17,9 @@ $('.spela-btn').on('click', function(){
 
 
 
-let game;
+// let game;
 
-JSON._classes(Game, Board, Player);
+// JSON._classes(Game, Board, Player);
 
 
 
@@ -53,4 +53,4 @@ $(window).resize(scale);
 
 
 
-  let newgame = new Board('.board');
+  let newgame = new Board();
