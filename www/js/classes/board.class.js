@@ -1,13 +1,14 @@
 class Board {
 
   constructor() {
+    this.currentPlayerNo = 1;
     this.board = [
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0],
       [0,0,0,0,0,0,0],
-      [1,0,0,0,0,0,2]
+      [0,0,0,0,0,0,0]
     ];
     this.renderBoard();
     this.setupHandler();
@@ -15,6 +16,7 @@ class Board {
 
   renderBoard() {
     const holder = $('.board');
+    holder.empty();
     for (let row = 0; row < this.board.length; row++) {
       let $row = $('<div>').addClass('board-row');
       for (let col = 0; col < this.board[row].length; col++) {
@@ -43,6 +45,9 @@ class Board {
   } // /renderBoard
 
   setupHandler() {
+
+    let that = this;
+
     // MouseEnter func
     $(document).on('mouseenter','.empty',function(){
       let col = $(this).attr('data-col');
@@ -53,6 +58,25 @@ class Board {
       let col = $(this).attr('data-col');
       $(this).removeClass('player1-hover').addClass('empty');
     });
+
+    $(document).on('click','.board-col', function(){
+      let col = $(this).attr('data-col');
+      if(that.makeMove(col, that.currentPlayerNo)){
+        that.renderBoard();
+        that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
+      }
+    });
+  }
+
+  makeMove(col, playerNo) {
+
+    for(let row = 5; row >= 0; row--){      
+      if(this.board[row][col] == 0){
+        this.board[row][col] = playerNo;
+        return true; 
+      }
+    }
+
   }
 
 
