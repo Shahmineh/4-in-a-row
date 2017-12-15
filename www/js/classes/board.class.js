@@ -36,7 +36,7 @@ class Board {
       console.log(col);
     });
 
-    $(document).on('mouseleave','.player1','player2',function(){
+    $(document).on('mouseleave','.player1',function(){
       let col = $(this).attr('data-col');
       $(this).removeClass('player1').addClass('empty');
       console.log(col);
