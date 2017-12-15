@@ -16,7 +16,7 @@ class Game extends Base {
             let p2Name = $('.p2-name').val();
             let p1AI = $('.p1-ai').is(':checked');
             let p2AI = $('.p2-ai').is(':checked');
-            let p1Color = $('.p1-color')
+            let p1Color = $('.p1-color');
         }
     }
 
