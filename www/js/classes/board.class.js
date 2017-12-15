@@ -4,26 +4,46 @@ class Board {
     this.rows = 6;
     this.cols = 7;
     this.selector = selector;
-    this.createBoard();
-
-    $(document).on('click mouseenter mouseleave','.slot',function(e){
-      let me = $(this);
-      let col = me.attr('data-col');
-      console.log('You have ' + e.type + ' column', col);
-    });
-
+    this.renderBoard();
+    this.setupHandler();
+    this.board = [
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0],
+      [0,0,0,0,0,0,0]
+    ]
   }
 
-  createBoard() {
+  renderBoard() {
     const holder = $('.board');
     for (let i = 0; i < this.rows; i++) {
       let row = $('<div>').addClass('board-row');
       for (let j = 0; j < this.cols; j++) {
-        let col = $('<div class="slot">').addClass('board-col empty').attr('data-row', i).attr('data-col', j);
+        let col = $('<div>').addClass('board-col empty').attr('data-row', i).attr('data-col', j);
         row.append(col);
       }
       holder.append(row);
     }
   }
+
+  setupHandler() {
+    // MouseEnter func
+    $(document).on('mouseenter','.empty',function(){
+      let col = $(this).attr('data-col');
+      $(this).removeClass('empty').addClass('player1');
+      console.log(col);
+    });
+
+    $(document).on('mouseleave','.player1','player2',function(){
+      let col = $(this).attr('data-col');
+      $(this).removeClass('player1').addClass('empty');
+      console.log(col);
+    });
+  }
+
+
+
 
 }
