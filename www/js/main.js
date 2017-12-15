@@ -25,4 +25,6 @@ scale();
 // Run every time the size changes
 $(window).resize(scale);
 
-let newgame = new Board();
+
+
+  let newgame = new Board('.board');
