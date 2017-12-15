@@ -20,31 +20,26 @@ class Player extends Base {
         if (colorEl.length > 0) {
             colorEl.addClass("active");
         }
+
+        let aiEl = $(el).find(".ai-check");
+        if (aiEl.length > 0) {
+            aiEl.val(this.ai);
+        }
+
+        let nameEl = $(el).find(".player-name");
+        if (nameEl.length > 0) {
+            nameEl.val(this.name);
+        }
     }
 
     isAI() {
         if (!this.ai) { return "checked" };
     }
 
-    click(element, instances) {
-        if(element.hasClass('color')){
-            $('.color').removeClass('active');
-            
-          }
-        
-    }
 
     
 
-    keyup(element, instances, event) {
-        // player's names
-
-    }
-
-    change(element, instances){
-         // .form-check-input 
-         // player difficulty
-    }
+    
 
    
 
@@ -60,12 +55,12 @@ class Player extends Base {
           <h4 class="card-title" for="player1name">Player 1:</h4>
           <div class="input-group">
             <span class="input-group-addon" >Name:</span>
-            <input type="text" class="form-control" value="${this.name}">
+            <input type="text" class="form-control player-name" value="${this.name}">
           </div>
 
           <div class="form-check mt-3">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input" ${this.isAI()}> Play with human
+              <input type="checkbox" class="form-check-input ai-check" ${this.isAI()}> Play with human
             </label>
           </div>
           <div class="mt-3">
@@ -91,4 +86,19 @@ class Player extends Base {
       </div>
         `;
     }
+
+
+template2(){
+    return `
+    <div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-block">
+    <p>${this.name}</p>
+        <button class="btn ${this.color}"></button>
+    </div>
+  </div>
+    `;
+}
+
 }

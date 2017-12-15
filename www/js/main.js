@@ -4,7 +4,14 @@ $('.spela-btn').on('click', function(){
   let player2 = new Player({name:"p2", color:"yellow", ai:false, difficulty:2});
   player1.render('.p1-info');
   player2.render('.p2-info');
+  
+
 });
+
+
+
+
+
 
 // test code for class Player
 
