@@ -49,12 +49,12 @@ class Board {
     // MouseEnter func
     $(document).on('mouseenter','.empty',function(){
       let col = $(this).attr('data-col');
-      $(this).removeClass('empty').addClass('player'+that.currentPlayerNo+'-hover');
+      $(this).addClass('player'+that.currentPlayerNo+'-hover');
     });
 
     $(document).on('mouseleave','.board-col',function(){
       let col = $(this).attr('data-col');
-      $(this).removeClass('player'+that.currentPlayerNo+'-hover').addClass('empty');
+      $(this).removeClass('player'+that.currentPlayerNo+'-hover');
     });
 
     $(document).on('click','.board-col', function(){

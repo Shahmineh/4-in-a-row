@@ -35,27 +35,26 @@ main {
     height: 130px;
     margin: 10px;
     float:left;
+    &.empty {
+      .board-game-shadow-inset;
+      background: white;
+    }
+    &.player1 {
+      background: firebrick;
+    }
+    &.player1-hover {
+      background: tomato;
+    }
+
+    &.player2 {
+      background: khaki;
+    }
+    &.player2-hover {
+      background: beige;
+    }
   }   
       
-  div.empty {
-    .board-game-shadow-inset;
-    background: white;
-  }
-  .red-player {
-    .board-coin-shadow;
-    background-color: #dc3545;
-  }
-  .yellow-player {
-    .board-coin-shadow;
-    background-color: #ffc107;
-  }
 
-  .red{
-    background-color:red;
-  }
-  .yellow{
-    background-color:yellow;
-  }
 
   
 
@@ -86,18 +85,7 @@ main {
       border-color: white;
     }
   }
- }
 
- .player1 {
-   background: firebrick;
- }
-  .player1-hover {
-   background: tomato;
- }
+ } // /end of Main {}
 
- .player2 {
-   background: khaki;
- }
-  .player2-hover {
-   background: beige;
- }
+
