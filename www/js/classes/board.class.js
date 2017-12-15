@@ -45,13 +45,11 @@ class Board {
   } // /renderBoard
 
   setupHandler() {
-
     let that = this;
-
     // MouseEnter func
     $(document).on('mouseenter','.empty',function(){
       let col = $(this).attr('data-col');
-      $(this).removeClass('empty').addClass('player1-hover');
+      $(this).removeClass('empty').addClass(`player1-hover`);
     });
 
     $(document).on('mouseleave','.player1-hover',function(){
@@ -63,13 +61,19 @@ class Board {
       let col = $(this).attr('data-col');
       if(that.makeMove(col, that.currentPlayerNo)){
         that.renderBoard();
-        that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
+        // Short hand If statement
+        // that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
+        if (that.currentPlayerNo == 1) {
+          that.currentPlayerNo = 2;
+        } else {
+          that.currentPlayerNo = 1;
+        }
       }
     });
+
   }
 
   makeMove(col, playerNo) {
-
     for(let row = 5; row >= 0; row--){      
       if(this.board[row][col] == 0){
         this.board[row][col] = playerNo;
