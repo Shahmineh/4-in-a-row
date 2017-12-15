@@ -12,6 +12,7 @@ class Board {
     ];
     this.renderBoard();
     this.setupHandler();
+    this.round = 1;
   }
 
   renderBoard() {
@@ -61,6 +62,8 @@ class Board {
       let col = $(this).attr('data-col');
       if(that.makeMove(col, that.currentPlayerNo)){
         that.renderBoard();
+
+        
         // Short hand If statement
         that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
         // if (that.currentPlayerNo == 1) {
@@ -68,6 +71,7 @@ class Board {
         // } else {
         //   that.currentPlayerNo = 1;
         // }
+        this.round++;
       }
     });
 
@@ -82,6 +86,8 @@ class Board {
     }
 
   }
+
+
 
 
 

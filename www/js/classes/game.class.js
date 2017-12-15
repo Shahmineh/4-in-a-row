@@ -1,17 +1,20 @@
 class Game extends Base {
-    constructor() {
+    constructor(board, player1, player2) {
         super();
-        this.board = new Board(this);
-        this.player1 = null;
-        this.player2 = null;
+        this.board = board;
+        this.player1 = player1;
+        this.player2 = player2;
+       
     }
     start() {
-        //this.board = new Board();
+
 
     }
 
     
 
-    
+
+
+
 
 }

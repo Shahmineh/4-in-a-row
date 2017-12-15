@@ -1,11 +1,20 @@
-// test code for class Player
-$('.spela-btn').on('click', function(){
-  let player1 = new Player({name:"p1", color:"red", ai:true, difficulty:1});
-  let player2 = new Player({name:"p2", color:"yellow", ai:false, difficulty:2});
-  player1.render('.p1-info');
-  player2.render('.p2-info');
-  
 
+
+let game;
+let board;
+let player1; 
+let player2;
+
+$('.spela-btn').on('click', function () {
+  player1 = new Player({ name: "p1", color: "red", ai: true, difficulty: 1 });
+  player2 = new Player({ name: "p2", color: "yellow", ai: false, difficulty: 2 }); 
+  player1.render('.p1-info');
+  player2.render('.p2-info'); 
+});
+$('.start-game').on('click', function(){
+  board = new Board();
+  game = new Game(board, player1, player2);
+  game.start();
 });
 
 
@@ -13,11 +22,6 @@ $('.spela-btn').on('click', function(){
 
 
 
-// test code for class Player
-
-
-
-// let game;
 
 // JSON._classes(Game, Board, Player);
 
@@ -26,7 +30,7 @@ $('.spela-btn').on('click', function(){
 
 
 // Scaling function so the board fits the browser widnow
-function scale(){
+function scale() {
   let orgW = 1050, orgH = 900;
   let w = $('.game-div').width();
   let h = $(window).height();
@@ -53,4 +57,3 @@ $(window).resize(scale);
 
 
 
-  let newgame = new Board();
