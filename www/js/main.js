@@ -15,6 +15,8 @@ $('.start-game').on('click', function(){
   board = new Board();
   game = new Game(board, player1, player2);
   game.start();
+  $('.spela-btn').hide();
+  $('.board').removeClass('d-flex');
 });
 
 
