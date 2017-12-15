@@ -38,7 +38,7 @@
             <a class="nav-item nav-link active" href="/">Start
               <span class="sr-only">(current)</span>
             </a>
-            <a class="nav-item nav-link" href="#">Spela</a>
+            <a class="nav-item nav-link" href="/index.html">Avbryt</a>
             <a class="nav-item nav-link" href="/html/highscore.html">High score</a>
             <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#rulesModal">Spelregler</a>
 
@@ -79,144 +79,91 @@
 
   <main>
     <div class="background-main">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 mx-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <a href="#" class="btn btn-secondary spela-btn" data-toggle="modal" data-target="#enteringNameModal">Spela</a>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-12 mx-auto">
             <div class="game-div">
+
               <!-- Dummy code for displaying the board -->
               <div class="board-holder mb-1 mx-auto">
                 <div class="board bg-info"></div>
               </div>
               <!-- //Dummy code -->
             </div>
+          </div>
         </div>
-      </div>
 
 
-          <!-- Modal (winner) -->
-          <div class="modal fade" id="winner-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content winnermodals">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Spelet slut!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p> Grattis
-                    <!--player name) -->"spelare". Du vann spelet!</p>
+        <!-- Modal (winner) -->
+        <div class="modal fade" id="winner-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content winnermodals">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Spelet slut!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p> Grattis
+                  <!--player name) -->"spelare". Du vann spelet!</p>
 
-                  <p>(bakgrundsfärgen anpassas till färgen vinnaren hade på sina spelbrickor)</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
-                </div>
+                <p>(bakgrundsfärgen anpassas till färgen vinnaren hade på sina spelbrickor)</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Stäng</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      <!--end container-->
+    </div>
+    </div>
+    <!--end container-->
 
-      <!--End show winner modal-->
+    <!--End show winner modal-->
 
-      </div>
-      </div>
+    </div>
+    </div>
 
-      </div>
-      </div>
+    </div>
+    </div>
 
-      <!-- Modul for entering player name and difficulties -->
-      <div class="modal fade" id="enteringNameModal" tabindex="-1" role="dialog" aria-labelledby="enteringNameModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="Please enter your name and difficulty">Please enter your name and difficulty</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <!-- Game info -->
-              <div class="row player_info">
-                <div class="col-12 col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <h4 class="card-title" for="player1name">Player 1:</h4>
-                      <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">Name:</span>
-                        <input type="text" class="form-control" id="player1name">
-                      </div>
-
-                      <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                          aria-expanded="false">
-                          Spela mot datorn
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Lätt</a>
-                          <a class="dropdown-item" href="#">Svårt</a>
-                        </div>
-                      </div>
-                      <div class="color_chosen">
-                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                          <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-dark color black"></button>
-                            <button type="button" class="btn btn-light color white"></button>
-                            <button type="button" class="btn btn-danger color red"></button>
-                            <button type="button" class="btn btn-warning color yellow"></button>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <h4 class="card-title" for="player1name">Player 2:</h4>
-                      <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">Name:</span>
-                        <input type="text" class="form-control" id="player1name">
-                      </div>
-
-                      <div class="dropdown">
-                        <button class="btn btn-dark dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                          aria-expanded="false">
-                          Spela mot datorn
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Lätt</a>
-                          <a class="dropdown-item" href="#">Svårt</a>
-                        </div>
-                      </div>
-                      <div class="color_chosen">
-                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                          <div class="btn-group mr-2" role="group" aria-label="First group">
-                            <button type="button" class="btn btn-dark color black"></button>
-                            <button type="button" class="btn btn-light color white"></button>
-                            <button type="button" class="btn btn-danger color red"></button>
-                            <button type="button" class="btn btn-warning color yellow"></button>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
+    <!-- Modul for entering player name and difficulties -->
+    <div class="modal fade" id="enteringNameModal" tabindex="-1" role="dialog" aria-labelledby="enteringNameModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="Please enter your name and difficulty">Please enter your name and difficulty</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Game info -->
+            <div class="row player_info">
+              <div class="col-12 col-sm-6 p1-info">
+                
               </div>
-              <!-- //game info -->
+              <div class="col-12 col-sm-6 p2-info">
+                
+              </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Starta spelet</button>
-            </div>
+            <!-- //game info -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary start-game" data-dismiss="modal">Starta spelet</button>
           </div>
         </div>
       </div>
-      <!-- // Modul for entering playername -->
+    </div>
+    <!-- // Modul for entering playername -->
   </main>
   <!-- JavaScript libraries -->
   <script src="/jsonflex.js"></script>
@@ -225,7 +172,10 @@
   <script src="/js/libs/bootstrap-4-beta.js"></script>
   <script src="/js/libs/freelancer.js"></script>
   <!-- Application specific JavaScript -->
+  <script src="/js/classes/base.class.js"></script>
+  <script src="/js/classes/game.class.js"></script>
   <script src="/js/classes/board.class.js"></script>
+  <script src="/js/classes/player.class.js"></script>
   <script src="/js/main.js"></script>
 </body>
 
