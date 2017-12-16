@@ -14,7 +14,7 @@ class Board {
     ];
     this.renderBoard();
     this.setupHandler();
-    this.player1.render('.my-turn',2);
+    this.player1.render('.my-turn', 2);
     this.round = 1;
   }
 
@@ -63,10 +63,15 @@ class Board {
 
     $(document).on('click', '.board-col', function () {
       let col = $(this).attr('data-col');
+      let row = that.getRowNow(col);
       if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
-        
-        
+        // if(that.checkVictory(col,row)){
+        //   console.log("game over");
+        // };
+
+
+
 
 
         // Short hand If statement
@@ -76,10 +81,10 @@ class Board {
         // } else {
         //   that.currentPlayerNo = 1;
         // }
-        if(that.currentPlayerNo == 2){
-          that.player1.render('.my-turn',2);
-        }else{
-          that.player2.render('.my-turn',2);
+        if (that.currentPlayerNo == 2) {
+          that.player1.render('.my-turn', 2);
+        } else {
+          that.player2.render('.my-turn', 2);
         }
 
         this.round++;
@@ -98,6 +103,18 @@ class Board {
 
   }
 
+  getRowNow(col) {
+    for (let row = 5; row >= 0; row--) {
+      if (this.board[row][col] == 0) {
+        return row;
+      }
+    }
+  }
+
+
+
+
+  
 
 
 
