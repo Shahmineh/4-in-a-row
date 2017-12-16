@@ -118,7 +118,7 @@ class Player extends Base {
     </div>
     <div class="card-block">
     <p>${this.name}</p>
-        <button class="btn ${this.color}"></button>
+    <div class="badge player${this.playerNo}">${this.name}</div>
     </div>
   </div>
     `;
