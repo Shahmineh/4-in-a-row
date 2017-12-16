@@ -15,7 +15,6 @@ class Board {
     this.renderBoard();
     this.setupHandler();
     this.player1.render('.my-turn',2);
-    this.player2.render('.my-turn',2);
     this.round = 1;
   }
 
@@ -66,6 +65,8 @@ class Board {
       let col = $(this).attr('data-col');
       if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
+        
+        
 
 
         // Short hand If statement
@@ -75,6 +76,12 @@ class Board {
         // } else {
         //   that.currentPlayerNo = 1;
         // }
+        if(that.currentPlayerNo == 2){
+          that.player1.render('.my-turn',2);
+        }else{
+          that.player2.render('.my-turn',2);
+        }
+
         this.round++;
       }
     });

@@ -71,6 +71,7 @@ class Player extends Base {
 
 
 
+
     template() {
         return `
         <div class="card ">
