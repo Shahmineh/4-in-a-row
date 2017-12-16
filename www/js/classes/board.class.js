@@ -66,9 +66,9 @@ class Board {
       let row = that.getRowNow(col);
       if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
-        // if(that.checkVictory(col,row)){
-        //   console.log("game over");
-        // };
+        if(that.checkVictory(col,row)){
+          console.log("game over");
+        };
 
 
 
@@ -111,10 +111,22 @@ class Board {
     }
   }
 
-
-
-
+  checkHorizontal(row, col) {
   
+    let count = 1;
+    let val = this.board[row][col];
+    for (let i = row - 1; i >= 0; i--) {
+      if (this.board[i][col] == val) count++;
+      else break;
+    }
+    if (count >= 4) return true;
+    else return false;
+  }
+
+
+
+
+
 
 
 
