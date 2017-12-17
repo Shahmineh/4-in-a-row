@@ -37,7 +37,7 @@ function scale() {
   let w = $('.game-div').width();
   let h = $(window).height();
   // Adjust h for headers, margins etc
-  h -= $('#mainNav').outerHeight() + 120;
+  h -= $('#mainNav').outerHeight() + 160;
   // This scaling would fit to width
   let wScale = w / orgW;
   // This scaling would fit to height
