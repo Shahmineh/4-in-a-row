@@ -1,17 +1,20 @@
 class Board {
 
-  constructor() {
+  constructor(player1, player2) {
+    this.player1 = player1;
+    this.player2 = player2;
     this.currentPlayerNo = 1;
     this.board = [
-      [0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0],
-      [0,0,0,0,0,0,0]
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0]
     ];
     this.renderBoard();
     this.setupHandler();
+    this.player1.render('.my-turn', 2);
     this.round = 1;
   }
 
@@ -24,9 +27,9 @@ class Board {
         let $col = $('<div>').addClass('board-col').attr('data-row', row).attr('data-col', col);
         if (this.board[row][col] == 0) {
           $col.addClass('empty')
-          } else if (this.board[row][col] == 1) {
+        } else if (this.board[row][col] == 1) {
           $col.addClass('player1');
-          } else { 
+        } else {
           $col.addClass('player2');
         }
         $row.append($col);
@@ -48,22 +51,29 @@ class Board {
   setupHandler() {
     let that = this;
     // MouseEnter func
-    $(document).on('mouseenter','.empty',function(){
+    $(document).on('mouseenter', '.empty', function () {
       let col = $(this).attr('data-col');
-      $(this).addClass('player'+that.currentPlayerNo+'-hover');
+      $(this).addClass('player' + that.currentPlayerNo + '-hover');
     });
 
-    $(document).on('mouseleave','.board-col',function(){
+    $(document).on('mouseleave', '.board-col', function () {
       let col = $(this).attr('data-col');
-      $(this).removeClass('player'+that.currentPlayerNo+'-hover');
+      $(this).removeClass('player' + that.currentPlayerNo + '-hover');
     });
 
-    $(document).on('click','.board-col', function(){
+    $(document).on('click', '.board-col', function () {
       let col = $(this).attr('data-col');
-      if(that.makeMove(col, that.currentPlayerNo)){
+      let row = that.getRowNow(col);
+      if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
+        // if(that.checkVictory(col,row)){
+        //   console.log("game over");
+        // };
 
-        
+
+
+
+
         // Short hand If statement
         that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
         // if (that.currentPlayerNo == 1) {
@@ -71,6 +81,12 @@ class Board {
         // } else {
         //   that.currentPlayerNo = 1;
         // }
+        if (that.currentPlayerNo == 2) {
+          that.player1.render('.my-turn', 2);
+        } else {
+          that.player2.render('.my-turn', 2);
+        }
+
         this.round++;
       }
     });
@@ -78,14 +94,38 @@ class Board {
   }
 
   makeMove(col, playerNo) {
-    for(let row = 5; row >= 0; row--){      
-      if(this.board[row][col] == 0){
+    for (let row = 5; row >= 0; row--) {
+      if (this.board[row][col] == 0) {
         this.board[row][col] = playerNo;
-        return true; 
+        return true;
       }
     }
 
   }
+
+  getRowNow(col) {
+    for (let row = 5; row >= 0; row--) {
+      if (this.board[row][col] == 0) {
+        return row;
+      }
+    }
+  }
+
+  // checkHorizontal(row, col) {
+  
+  //   let count = 1;
+  //   let val = this.board[row][col];
+  //   for (let i = row - 1; i >= 0; i--) {
+  //     if (this.board[i][col] == val) count++;
+  //     else break;
+  //   }
+  //   if (count >= 4) return true;
+  //   else return false;
+  // }
+
+
+
+
 
 
 
