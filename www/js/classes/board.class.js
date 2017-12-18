@@ -64,7 +64,7 @@ class Board extends Base {
 
     $(document).on('mouseleave', '.board-col', function () {
       let col = $(this).attr('data-col');
-      $(this).removeClass('player' + that.currentPlayerNo + '-hover');
+      $(this).removeClass('player1-hover').removeClass('player2-hover');
     });
 
     $(document).on('click', '.board-col', function () {
@@ -80,7 +80,7 @@ class Board extends Base {
 
         // there are problems of checkVictory(). The point of call this function here
         // is to finish the game, and do the rest tasks.
-        if (!that.checkVictory(col, row)) {
+        if (!that.checkForWin(row, col)) { 
 
           // Short hand If statement
           that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
@@ -148,16 +148,56 @@ class Board extends Base {
   }
 
   //checkHorizontal 
-  checkVictory(row, col) {
+  // checkVictory(row, col) {
 
-    let count = 1;
-    let val = this.board[row][col];
-    for (let i = row - 1; i >= 0; i--) {
-      if (this.board[i][col] == val) count++;
-      else break;
+  //   let count = 1;
+  //   let val = this.board[row][col];
+  //   for (let i = row - 1; i >= 0; i--) {
+  //     if (this.board[i][col] == val) count++;
+  //     else break;
+  //   }
+  //   if (count >= 4) return true;
+  //   else return false;
+  // }
+
+  checkForWin(row, col) {
+    let counter1 = -1;
+    let counter2 = 0;
+    let that = this;
+
+    //checks cols to right
+    function checkColRight(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter1++
+        col++
+      } 
+      return counter1;
     }
-    if (count >= 4) return true;
-    else return false;
+    function checkColLeft(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter1++
+        col--
+      } 
+      return counter1;
+    }
+    //Checks the row up
+    function checkRowUp(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter2++
+        if (row == 5) {
+          break
+        } else {
+          row++
+        }
+      } 
+    }
+    checkColRight(row, col);
+    checkColLeft(row, col);
+    checkRowUp(row, col); 
+
+    if ( counter1 >= 4 || counter2 >= 4) {
+      return true;
+    }
   }
 
  
