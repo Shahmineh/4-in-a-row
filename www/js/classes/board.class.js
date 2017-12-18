@@ -70,6 +70,11 @@ class Board extends Base {
     $(document).on('click', '.board-col', function () {
       let col = $(this).attr('data-col');
       let row = that.getRowNow(col);
+      if (that.currentPlayerNo == 2) {
+        that.player1.render('.my-turn', 2);
+      } else {
+        that.player2.render('.my-turn', 2);
+      }
       if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
 
@@ -84,11 +89,7 @@ class Board extends Base {
           // } else {
           //   that.currentPlayerNo = 1;
           // }
-          if (that.currentPlayerNo == 2) {
-            that.player1.render('.my-turn', 2);
-          } else {
-            that.player2.render('.my-turn', 2);
-          }
+         
           //console.log(that.move);
           that.move++;
 

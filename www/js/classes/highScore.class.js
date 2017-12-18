@@ -18,8 +18,8 @@ class HighScore extends Base {
     render(el, templateNo) {
         super.render(el,templateNo);
         this.vsHuman=this.vsHunamFilter();
-     
-        
+        this.vsEasy=this. vsEasyFilter();
+        this.vsHard=this. vsHardFilter();    
     }
 
     vsHunamFilter(){
@@ -32,12 +32,24 @@ class HighScore extends Base {
         return humanWinner;
     }
 
-    vsHunamFilter(){
-
+    vsEasyFilter(){
+        let vsEasy=[];
+        for(let winner of this.highScoreList){
+            if(winner.level==1){
+                easyWinner.push(winner);
+            }
+        }
+        return easyWinner;
     }
 
-    vsHunamFilter(){
-
+    vsHardFilter(){
+        let vsEasy=[];
+        for(let winner of this.highScoreList){
+            if(winner.level==2){
+                hardWinner.push(winner);
+            }
+        }
+        return hardWinner;
     }
 
 
