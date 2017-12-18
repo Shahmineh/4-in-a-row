@@ -59,13 +59,16 @@ class Board extends Base {
     // MouseEnter func
     $(document).on('mouseenter', '.empty', function () {
       let col = $(this).attr('data-col');
-      $(this).addClass('player' + that.currentPlayerNo + '-hover');
+      let row = that.getRowNow(col); 
+      $(`[data-row='${row}'][data-col='${col}']`).addClass('player1-hover'); 
     });
 
-    $(document).on('mouseleave', '.board-col', function () {
-      let col = $(this).attr('data-col');
-      $(this).removeClass('player' + that.currentPlayerNo + '-hover');
-    });
+    $(document).on('mouseleave', '.board-col', function () { 
+      let col = $(this).attr('data-col'); 
+      let cell = that.getRowNow(col); 
+      $(`[data-row='${cell}'][data-col='${col}']`).removeClass('player' + that.currentPlayerNo + '-hover'); 
+    }); 
+
 
     $(document).on('click', '.board-col', function () {
       let col = $(this).attr('data-col');
@@ -75,7 +78,7 @@ class Board extends Base {
 
         // there are problems of checkVictory(). The point of call this function here
         // is to finish the game, and do the rest tasks.
-        if (!that.checkVictory(col, row)) {
+        if ( true) { // if statement  !that.checkVictory(col, row) 
 
           // Short hand If statement
           that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
@@ -147,17 +150,17 @@ class Board extends Base {
   }
 
   //checkHorizontal 
-  checkVictory(row, col) {
+  // checkVictory(row, col) {
 
-    let count = 1;
-    let val = this.board[row][col];
-    for (let i = row - 1; i >= 0; i--) {
-      if (this.board[i][col] == val) count++;
-      else break;
-    }
-    if (count >= 4) return true;
-    else return false;
-  }
+  //   let count = 1;
+  //   let val = this.board[row][col];
+  //   for (let i = row - 1; i >= 0; i--) {
+  //     if (this.board[i][col] == val) count++;
+  //     else break;
+  //   }
+  //   if (count >= 4) return true;
+  //   else return false;
+  // }
 
  
 
