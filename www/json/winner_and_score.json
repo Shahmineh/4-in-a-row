@@ -89,6 +89,36 @@
       "score": 4,
       "ai": false,
       "level": null
+    },
+    {
+      "name": "player 2",
+      "score": 4,
+      "ai": false,
+      "level": "2"
+    },
+    {
+      "name": "player 2",
+      "score": 2,
+      "ai": false,
+      "level": "2"
+    },
+    {
+      "name": "player 1",
+      "score": 1,
+      "ai": false,
+      "level": "2"
+    },
+    {
+      "name": "player 1",
+      "score": 1,
+      "ai": false,
+      "level": "2"
+    },
+    {
+      "name": "player 1",
+      "score": 1,
+      "ai": false,
+      "level": "1"
     }
   ]
 }
