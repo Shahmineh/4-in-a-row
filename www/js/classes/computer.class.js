@@ -1,9 +1,12 @@
 class Computer extends Player{
     constructor(){
-
+        super();
     }
 
-    AImove(){
+    AIeasy(){
         
+    }
+    AIhard(){
+
     }
 }

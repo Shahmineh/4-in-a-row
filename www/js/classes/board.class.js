@@ -22,6 +22,7 @@ class Board extends Base {
         this.winnerAndScore = data.app;
     });
   }
+  
 
   renderBoard() {
     const holder = $('.board');
@@ -105,6 +106,9 @@ class Board extends Base {
           }
           that.winnerAndScore.push(objWS);
           JSON._save('winner_and_score', {app:that.winnerAndScore});
+          $('.refresh-page').on('click',function(){
+            location.reload(); 
+          });
 
         }
 
@@ -155,6 +159,8 @@ class Board extends Base {
     if (count >= 4) return true;
     else return false;
   }
+
+ 
 
 
   win() {
