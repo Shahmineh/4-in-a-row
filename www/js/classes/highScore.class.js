@@ -5,25 +5,51 @@ class HighScore extends Base {
         this.highScoreList = [];
         return JSON._load('winner_and_score')
         .then((data)=>{
-            this.highScoreList=this.highScoreList.push(data.app);
+            this.highScoreList=data.app;
         });
-        this.name=name;
-        this.score=score;
-        this.ai=ai;
-        this.level=level;
         this.vsHuman=[];
         this.vsEasy=[];
         this.vsHard=[];
+        this.ranking=[];
+    }
+
+ 
+
+    render(el, templateNo) {
+        super.render(el,templateNo);
+        this.vsHuman=this.vsHunamFilter();
+     
         
     }
+
+    vsHunamFilter(){
+        let humanWinner=[];
+        for(let winner of this.highScoreList){
+            if(winner.ai==false){
+                humanWinner.push(winner);
+            }
+        }
+        return humanWinner;
+    }
+
+    vsHunamFilter(){
+
+    }
+
+    vsHunamFilter(){
+
+    }
+
+
+
 
 
     template(){
         return `
         <tr>
-        <th class="${this.rank}">${this.rank}</th>
-        <td class="${this.name}">${this.name}</td>
-        <td class="${this.score}">${this.score}</td>
+        <th class="${this.vsHuman.ranking}">${this.vsHuman.ranking}</th>
+        <td class="${this.vsHuman.name}">${this.vsHuman.name}</td>
+        <td class="${this.vsHuman.score}">${this.vsHuman.score}</td>
         </tr>
                  
         `
