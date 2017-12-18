@@ -1,6 +1,12 @@
 {
-  "objWS": {
-    "name": "p2",
-    "point": 4
-  }
+  "app": [
+    {
+      "name": "p2",
+      "point": 4
+    },
+    {
+      "name": "p1",
+      "point": 5
+    }
+  ]
 }

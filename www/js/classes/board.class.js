@@ -18,6 +18,9 @@ class Board extends Base {
     this.player1.render('.my-turn', 2);
     this.move = 1;
     this.winnerAndScore = [];
+    return JSON._load('winner_and_score').then((data) => {
+        this.winnerAndScore = data.app;
+    });
   }
 
   renderBoard() {
@@ -98,7 +101,7 @@ class Board extends Base {
             point: score
           }
           that.winnerAndScore.push(objWS);
-          JSON._save('winner_and_score', {objWS});
+          JSON._save('winner_and_score', {app:that.winnerAndScore});
 
         }
 
