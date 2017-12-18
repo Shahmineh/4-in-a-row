@@ -85,39 +85,64 @@
       "level": null
     },
     {
+<<<<<<< HEAD
       "name": "player 1",
       "score": 1,
+=======
+      "name": "player 2",
+      "score": 4,
+>>>>>>> master
       "ai": false,
       "level": null
     },
     {
+<<<<<<< HEAD
       "name": "player 1",
       "score": 1,
       "ai": false,
       "level": null
+=======
+      "name": "player 2",
+      "score": 4,
+      "ai": false,
+      "level": "2"
+>>>>>>> master
     },
     {
       "name": "player 2",
       "score": 2,
       "ai": false,
+<<<<<<< HEAD
       "level": null
+=======
+      "level": "2"
+>>>>>>> master
     },
     {
       "name": "player 1",
       "score": 1,
       "ai": false,
+<<<<<<< HEAD
       "level": null
+=======
+      "level": "2"
+>>>>>>> master
     },
     {
       "name": "player 1",
       "score": 1,
       "ai": false,
+<<<<<<< HEAD
       "level": null
+=======
+      "level": "2"
+>>>>>>> master
     },
     {
       "name": "player 1",
       "score": 1,
       "ai": false,
+<<<<<<< HEAD
       "level": null
     },
     {
@@ -135,6 +160,13 @@
     {
       "name": "player 2",
       "score": 10,
+=======
+      "level": "1"
+    },
+    {
+      "name": "player 2",
+      "score": 4,
+>>>>>>> master
       "ai": false,
       "level": null
     }

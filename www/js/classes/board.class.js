@@ -19,10 +19,10 @@ class Board extends Base {
     this.move = 1;
     this.winnerAndScore = [];
     return JSON._load('winner_and_score').then((data) => {
-        this.winnerAndScore = data.app;
+      this.winnerAndScore = data.app;
     });
   }
-  
+
 
   renderBoard() {
     const holder = $('.board');
@@ -89,7 +89,7 @@ class Board extends Base {
           // } else {
           //   that.currentPlayerNo = 1;
           // }
-         
+
           //console.log(that.move);
           that.move++;
 
@@ -99,16 +99,16 @@ class Board extends Base {
           let winnerScore = that.move;
           let winner = that.getWinner(that.currentPlayerNo);
           let winnerName = winner.name;
-          let objWS={
-            name:winnerName,
+          let objWS = {
+            name: winnerName,
             score: winnerScore,
             ai: winner.ai,
             level: winner.difficulty
           }
           that.winnerAndScore.push(objWS);
-          JSON._save('winner_and_score', {app:that.winnerAndScore});
-          $('.refresh-page').on('click',function(){
-            location.reload(); 
+          JSON._save('winner_and_score', { app: that.winnerAndScore });
+          $('.refresh-page').on('click', function () {
+            location.reload();
           });
         }
 
@@ -200,7 +200,11 @@ class Board extends Base {
     }
   }
 
- 
+  checkHorizontal() {
+
+  }
+
+
 
 
 

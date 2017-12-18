@@ -82,17 +82,17 @@
           <div class="highscore_table mt-5">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">VS Human</a>
+                <a class="nav-link active" data-toggle="tab" href="#vs-human" role="tab" aria-controls="vs-human-tab" aria-selected="true">VS Human</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">VS Computer Easy</a>
+                <a class="nav-link" data-toggle="tab" href="#vs-easy" role="tab" aria-controls="vs-easy-tab" aria-selected="false">VS Computer Easy</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">VS Computer Hard</a>
+                <a class="nav-link" data-toggle="tab" href="#vs-hard" role="tab" aria-controls="vs-hard-tab" aria-selected="false">VS Computer Hard</a>
               </li>
             </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="vs-human" role="tabpanel" aria-labelledby="vs-human-tab">
                 <table class="table table-hover">
                 <thead>
                   <tr>
@@ -101,12 +101,12 @@
                     <th>Score</th>
                   </tr>
                 </thead>
-                <tbody class="vsHuman">
+                <tbody class="vs-human-content">
                   
                 </tbody>
               </table>
               </div>
-              <div class="tab-pane fade"  role="tabpanel" aria-labelledby="profile-tab">
+              <div class="tab-pane fade" id="vs-easy" role="tabpanel" aria-labelledby="vs-easy-tab">
                   <table class="table table-hover">
                       <thead>
                         <tr>
@@ -115,12 +115,12 @@
                           <th>Score</th>
                         </tr>
                       </thead>
-                      <tbody class="vsEasy">
+                      <tbody class="vs-easy-content">
                         
                       </tbody>
                     </table>
               </div>
-              <div class="tab-pane fade"  role="tabpanel" aria-labelledby="contact-tab">
+              <div class="tab-pane fade" id="vs-hard" role="tabpanel" aria-labelledby="vs-hard-tab">
                   <table class="table table-hover">
                       <thead>
                         <tr>
@@ -129,7 +129,7 @@
                           <th>Score</th>
                         </tr>
                       </thead>
-                      <tbody class="vsHard">
+                      <tbody class="vs-hard-content">
                         
                       </tbody>
                     </table>

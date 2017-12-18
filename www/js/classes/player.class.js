@@ -7,11 +7,11 @@ class Player extends Base {
         this.ai = config.ai;
         this.difficulty = config.difficulty;
         this.playerNo = config.playerNo;
-        this.playerEl= config.playerEl;
+        this.playerEl = config.playerEl;
     }
 
     render(el, templateNo) {
-        super.render(el,templateNo);
+        super.render(el, templateNo);
 
         let levelEl = $(el).find(".player-difficulty");
         if (levelEl.length > 0) {
@@ -46,24 +46,33 @@ class Player extends Base {
         }
     }
 
-    change(element, instances){
-        if (element.hasClass('ai-check')){
-            this.ai=$(element).prop('checked');
+    change(element, instances) {
+        if (element.hasClass('ai-check')) {
+            this.ai = $(element).prop('checked');
         }
-        if(element.hasClass('player-difficulty')){
-            this.difficulty=$(element).val();
+        if (element.hasClass('player-difficulty')) {
+            this.difficulty = $(element).val();
         }
-        
+
     }
-    keyup(element, instances, event){
+    keyup(element, instances, event) {
         // add a new cat or owner if we press enter in the name fields
         // (which -> the code of the key pressed, enter is 13)
-        if(element.hasClass('player-name') ){
-            this.name=$(element).val();
+        if (element.hasClass('player-name')) {
+            this.name = $(element).val();
         }
-      }
+    }
 
 
+    logical() {
+        // player.ai = false;
+        // player
+
+
+
+
+
+    }
 
 
 
