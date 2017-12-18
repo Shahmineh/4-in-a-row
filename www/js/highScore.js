@@ -1,0 +1,2 @@
+
+let highScore=new HighScore();
