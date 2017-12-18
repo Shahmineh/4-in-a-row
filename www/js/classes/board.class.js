@@ -93,12 +93,15 @@ class Board extends Base {
 
         } else {
           $("#winner-modal").modal();
-          $('#winner-name').html(that.getPlayerName(that.currentPlayerNo));
-          let score = that.move;
-          let winner = that.getPlayerName(that.currentPlayerNo);
+          $('#winner-name').html(that.getWinner(that.currentPlayerNo).name);
+          let winnerScore = that.move;
+          let winner = that.getWinner(that.currentPlayerNo);
+          let winnerName = winner.name;
           let objWS={
-            name:winner,
-            point: score
+            name:winnerName,
+            point: winnerScore,
+            ai: winner.ai,
+            level: winner.difficulty
           }
           that.winnerAndScore.push(objWS);
           JSON._save('winner_and_score', {app:that.winnerAndScore});
@@ -132,11 +135,11 @@ class Board extends Base {
     }
   }
 
-  getPlayerName(PlayerNo) {
+  getWinner(PlayerNo) {
     if (PlayerNo == 2) {
-      return this.player2.name;
+      return this.player2;
     } else {
-      return this.player1.name;
+      return this.player1;
     }
   }
 

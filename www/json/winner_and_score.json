@@ -5,8 +5,20 @@
       "point": 4
     },
     {
-      "name": "p1",
-      "point": 5
+      "name": "p2",
+      "point": 4,
+      "ai": 2
+    },
+    {
+      "name": "p2",
+      "point": 4,
+      "ai": 2
+    },
+    {
+      "name": "p2",
+      "point": 4,
+      "ai": false,
+      "level": 2
     }
   ]
 }
