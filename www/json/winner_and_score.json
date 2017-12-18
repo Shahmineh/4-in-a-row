@@ -1,102 +1,52 @@
 {
   "app": [
     {
-      "name": "p2",
-      "point": 4
+      "name": "player1",
+      "score": 3,
+      "ai": true,
+      "level": 1
+    },
+    {
+      "name": "p1",
+      "score": 1,
+      "ai": true,
+      "level": 1
     },
     {
       "name": "p2",
-      "point": 4,
-      "ai": 2
+      "score": 2,
+      "ai": false,
+      "level": 2
+    },
+    {
+      "name": "p1",
+      "score": 1,
+      "ai": true,
+      "level": 1
     },
     {
       "name": "p2",
-      "point": 4,
-      "ai": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
+      "score": 4,
       "ai": false,
       "level": 2
     },
     {
       "name": "p2",
-      "point": 4,
+      "score": 2,
       "ai": false,
       "level": 2
     },
     {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
+      "name": "p1",
+      "score": 1,
+      "ai": true,
+      "level": 1
     },
     {
-      "name": "p2",
-      "point": 4,
+      "name": "player 2",
+      "score": 4,
       "ai": false,
-      "level": 2
-    },
-    {
-      "name": "player",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "Anna",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "Anna",
-      "point": 10,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
-    },
-    {
-      "name": "p2",
-      "point": 4,
-      "ai": false,
-      "level": 2
+      "level": null
     }
   ]
 }

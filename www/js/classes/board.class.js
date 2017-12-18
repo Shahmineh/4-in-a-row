@@ -100,7 +100,7 @@ class Board extends Base {
           let winnerName = winner.name;
           let objWS={
             name:winnerName,
-            point: winnerScore,
+            score: winnerScore,
             ai: winner.ai,
             level: winner.difficulty
           }
@@ -109,7 +109,6 @@ class Board extends Base {
           $('.refresh-page').on('click',function(){
             location.reload(); 
           });
-
         }
 
 
@@ -162,15 +161,6 @@ class Board extends Base {
 
  
 
-
-  win() {
-
-    //modal winning
-    //render model
-    //save game info into JSON
-    //refresh page for game reset
-
-  }
 
 
 
