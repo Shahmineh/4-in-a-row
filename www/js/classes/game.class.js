@@ -6,10 +6,10 @@ class Game extends Base {
         this.player2 = player2;
        
     }
-    start() {
 
-
-    }
+    
+   
+    
 
     
 

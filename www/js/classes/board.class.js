@@ -1,6 +1,7 @@
-class Board {
+class Board extends Base {
 
   constructor(player1, player2) {
+    super();
     this.player1 = player1;
     this.player2 = player2;
     this.currentPlayerNo = 1;
@@ -15,7 +16,8 @@ class Board {
     this.renderBoard();
     this.setupHandler();
     this.player1.render('.my-turn', 2);
-    this.round = 1;
+    this.move = 1;
+    this.winnerAndScore = [];
   }
 
   renderBoard() {
@@ -66,28 +68,44 @@ class Board {
       let row = that.getRowNow(col);
       if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
-        // if(that.checkVictory(col,row)){
-        //   console.log("game over");
-        // };
 
+        // there are problems of checkVictory(). The point of call this function here
+        // is to finish the game, and do the rest tasks.
+        if (!that.checkVictory(col, row)) {
 
+          // Short hand If statement
+          that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
+          // if (that.currentPlayerNo == 1) {
+          //   that.currentPlayerNo = 2;
+          // } else {
+          //   that.currentPlayerNo = 1;
+          // }
+          if (that.currentPlayerNo == 2) {
+            that.player1.render('.my-turn', 2);
+          } else {
+            that.player2.render('.my-turn', 2);
+          }
+          //console.log(that.move);
+          that.move++;
 
-
-
-        // Short hand If statement
-        that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
-        // if (that.currentPlayerNo == 1) {
-        //   that.currentPlayerNo = 2;
-        // } else {
-        //   that.currentPlayerNo = 1;
-        // }
-        if (that.currentPlayerNo == 2) {
-          that.player1.render('.my-turn', 2);
         } else {
-          that.player2.render('.my-turn', 2);
+          $("#winner-modal").modal();
+          $('#winner-name').html(that.getPlayerName(that.currentPlayerNo));
+          let score = that.move;
+          let winner = that.getPlayerName(that.currentPlayerNo);
+          let objWS={
+            name:winner,
+            point: score
+          }
+          that.winnerAndScore.push(objWS);
+          JSON._save('winner_and_score', {objWS});
+
         }
 
-        this.round++;
+
+
+
+
       }
     });
 
@@ -111,19 +129,36 @@ class Board {
     }
   }
 
-  // checkHorizontal(row, col) {
-  
-  //   let count = 1;
-  //   let val = this.board[row][col];
-  //   for (let i = row - 1; i >= 0; i--) {
-  //     if (this.board[i][col] == val) count++;
-  //     else break;
-  //   }
-  //   if (count >= 4) return true;
-  //   else return false;
-  // }
+  getPlayerName(PlayerNo) {
+    if (PlayerNo == 2) {
+      return this.player2.name;
+    } else {
+      return this.player1.name;
+    }
+  }
+
+  //checkHorizontal 
+  checkVictory(row, col) {
+
+    let count = 1;
+    let val = this.board[row][col];
+    for (let i = row - 1; i >= 0; i--) {
+      if (this.board[i][col] == val) count++;
+      else break;
+    }
+    if (count >= 4) return true;
+    else return false;
+  }
 
 
+  win() {
+
+    //modal winning
+    //render model
+    //save game info into JSON
+    //refresh page for game reset
+
+  }
 
 
 

@@ -14,7 +14,8 @@ $('.spela-btn').on('click', function () {
 $('.start-game').on('click', function () {
   board = new Board(player1, player2);
   game = new Game(board, player1, player2);
-  game.start();
+  //game.start();   
+  //If we still have time. Set up game start in main.js, and move board, player render to Game. Move the code and make the process more logical.
   $('.spela-btn').hide();
   $('.board').removeClass('d-flex');
 });
