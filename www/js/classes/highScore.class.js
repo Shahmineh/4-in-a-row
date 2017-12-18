@@ -3,23 +3,35 @@ class HighScore extends Base {
     constructor() {
         super();
         this.highScoreList = [];
-        return JSON._load('winner_and_score')
-        .then((data)=>{
-            this.highScoreList=data.app;
-        });
-        this.vsHuman=[];
-        this.vsEasy=[];
-        this.vsHard=[];
-        this.ranking=[];
+        this.vsHuman = null;
+        this.vsEasy = null;
+        this.vsHard = null;
     }
 
- 
+    init(){
+        return JSON._load('winner_and_score')
+            .then((data)=>{
+                this.highScoreList=data.app;
+                this.vsHuman=this.vsHunamFilter();
+                this.vsEasy=this.vsEasyFilter();
+                this.vsHard=this.vsHardFilter();    
+            });
+    }
 
-    render(el, templateNo) {
-        super.render(el,templateNo);
-        this.vsHuman=this.vsHunamFilter();
-        this.vsEasy=this. vsEasyFilter();
-        this.vsHard=this. vsHardFilter();    
+    render(el, list) {
+        let html = "";
+
+        for(let i = 0; i<list.length; i++){
+            html += "<tr>";
+            html += "<td>" + (i+1) + "</td>";
+            html += "<td>" + list[i].name + "</td>";
+            html += "<td>" + list[i].score + "</td>";
+            html += "</tr>";
+        }
+        
+
+
+        $(el).append($(html));
     }
 
     vsHunamFilter(){
@@ -33,7 +45,7 @@ class HighScore extends Base {
     }
 
     vsEasyFilter(){
-        let vsEasy=[];
+        let easyWinner=[];
         for(let winner of this.highScoreList){
             if(winner.level==1){
                 easyWinner.push(winner);
@@ -43,7 +55,7 @@ class HighScore extends Base {
     }
 
     vsHardFilter(){
-        let vsEasy=[];
+        let hardWinner=[];
         for(let winner of this.highScoreList){
             if(winner.level==2){
                 hardWinner.push(winner);
