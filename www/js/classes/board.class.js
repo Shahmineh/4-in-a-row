@@ -55,18 +55,17 @@ class Board extends Base {
     // MouseEnter func
     $(document).on('mouseenter', '.empty', function () {
       let col = $(this).attr('data-col');
-      let cell = that.bottomEmptyCell(col);
-      $(`[data-row='${cell}'][data-col='${col}']`).addClass('player' + that.currentPlayerNo + '-hover');
+      $(this).addClass('player' + that.currentPlayerNo + '-hover');
     });
 
     $(document).on('mouseleave', '.board-col', function () {
       let col = $(this).attr('data-col');
-      let cell = that.bottomEmptyCell(col);
-      $(`[data-row='${cell}'][data-col='${col}']`).removeClass('player' + that.currentPlayerNo + '-hover');
+      $(this).removeClass('player' + that.currentPlayerNo + '-hover');
     });
 
     $(document).on('click', '.board-col', function () {
       let col = $(this).attr('data-col');
+      let row = that.getRowNow(col);
       if (that.makeMove(col, that.currentPlayerNo)) {
         that.renderBoard();
 
@@ -106,27 +105,11 @@ class Board extends Base {
 
 
 
-        // if(that.checkVictory(col,row)){
-        //   console.log("game over");
-        // };
-        // Short hand If statement
-        that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
-        // if (that.currentPlayerNo == 1) {
-        //   that.currentPlayerNo = 2;
-        // } else {
-        //   that.currentPlayerNo = 1;
-        // }
-        if (that.currentPlayerNo == 2) {
-          that.player1.render('.my-turn', 2);
-        } else {
-          that.player2.render('.my-turn', 2);
-        }
 
       }
     });
 
   }
-
 
   makeMove(col, playerNo) {
     for (let row = 5; row >= 0; row--) {
@@ -138,8 +121,7 @@ class Board extends Base {
 
   }
 
-  bottomEmptyCell(col) {
-    //returns the bottom empty cells row
+  getRowNow(col) {
     for (let row = 5; row >= 0; row--) {
       if (this.board[row][col] == 0) {
         return row;
@@ -154,8 +136,6 @@ class Board extends Base {
       return this.player1.name;
     }
   }
-
-
 
   //checkHorizontal 
   checkVictory(row, col) {
