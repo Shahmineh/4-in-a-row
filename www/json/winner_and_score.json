@@ -19,6 +19,30 @@
       "point": 4,
       "ai": false,
       "level": 2
+    },
+    {
+      "name": "p2",
+      "point": 4,
+      "ai": false,
+      "level": 2
+    },
+    {
+      "name": "p2",
+      "point": 4,
+      "ai": false,
+      "level": 2
+    },
+    {
+      "name": "p2",
+      "point": 4,
+      "ai": false,
+      "level": 2
+    },
+    {
+      "name": "player",
+      "point": 4,
+      "ai": false,
+      "level": 2
     }
   ]
 }

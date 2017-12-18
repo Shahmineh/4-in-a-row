@@ -55,6 +55,13 @@ class Player extends Base {
         }
         
     }
+    keyup(element, instances, event){
+        // add a new cat or owner if we press enter in the name fields
+        // (which -> the code of the key pressed, enter is 13)
+        if(element.hasClass('player-name') ){
+            this.name=$(element).val();
+        }
+      }
 
 
 
