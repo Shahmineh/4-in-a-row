@@ -119,6 +119,12 @@
       "score": 1,
       "ai": false,
       "level": "1"
+    },
+    {
+      "name": "player 2",
+      "score": 4,
+      "ai": false,
+      "level": null
     }
   ]
 }
