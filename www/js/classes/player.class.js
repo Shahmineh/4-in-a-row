@@ -90,7 +90,7 @@ class Player extends Base {
 
           <div class="form-check mt-3">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input ai-check"> Spela som datorspelare
+              <input type="checkbox" class="form-check-input ai-check-${this.playerNo}"> Spela som datorspelare
             </label>
           </div>
           <div class="mt-3">

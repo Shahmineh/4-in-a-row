@@ -12,7 +12,9 @@ $('.spela-btn').on('click', function () {
   player2.render('.p2-info');
 });
 $('.start-game').on('click', function () {
-  
+  player1 = $('.ai-check-1').prop('checked')? player1 : new Player({name: player1.name, playerNo: player1.playerNo, playerEl:player1.playerEl});
+  player2 = $('.ai-check-2').prop('checked')? player2 : new Player({name: player2.name, playerNo: player2.playerNo, playerEl:player2.playerEl});
+
   board = new Board(player1, player2);
   game = new Game(board, player1, player2);
   //game.start();   
