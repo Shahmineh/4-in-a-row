@@ -58,56 +58,57 @@ class Board extends Base {
       $(this).removeClass('player1-hover').removeClass('player2-hover');
     });
 
-    $(document).on('click', '.board-col', function () {
+    $(document).on('click', '.board-col', function(){
       let col = $(this).attr('data-col');
-      let row = that.getRowNow(col);
-      if (that.currentPlayerNo == 2) {
-        that.player1.render('.my-turn', 2);
-      } else {
-        that.player2.render('.my-turn', 2);
-      }
-      if (that.makeMove(col, that.currentPlayerNo)) {
-        that.renderBoard();
-
-        // there are problems of checkVictory(). The point of call this function here
-        // is to finish the game, and do the rest tasks.
-        if (!that.checkForWin(row, col)) { 
-
-          // Short hand If statement
-          that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
-
-          that.move++;
-          
-
-        } else {
-          $("#winner-modal").modal();
-          $('#winner-name').html(that.getWinner(that.currentPlayerNo).name);
-          let winnerScore = that.move;
-          let winner = that.getWinner(that.currentPlayerNo);
-          let winnerName = winner.name;
-          let objWS = {
-            name: winnerName,
-            score: winnerScore,
-            ai: winner.ai,
-            level: winner.difficulty
-          }
-          that.winnerAndScore.push(objWS);
-          JSON._save('winner_and_score', { app: that.winnerAndScore });
-          $('.refresh-page').on('click', function () {
-            location.reload();
-          });
-        }
-
-
-
-
-
-      }
+      that.playColumn(col);
     });
 
   }
 
-  makeMove(col, playerNo) {
+  playColumn(col){
+
+    let row = this.getRowNow(col);
+    if (this.currentPlayerNo == 2) {
+     this.player1.render('.my-turn', 2);
+    } else {
+     this.player2.render('.my-turn', 2);
+    }
+    if (this.makeMove(col, this.currentPlayerNo)) {
+      this.renderBoard();
+
+      // there are problems of checkVictory(). The point of call this function here
+      // is to finish the game, and do the rest tasks.
+      if (!this.checkForWin(row, col)) {
+
+       // Short hand If statement
+       this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
+
+       this.move++;
+     } else {
+       $("#winner-modal").modal();
+       $('#winner-name').html(this.getWinner(this.currentPlayerNo).name);
+       let winnerScore = this.move;
+       let winner = this.getWinner(this.currentPlayerNo);
+       let winnerName = winner.name;
+       let objWS = {
+         name: winnerName,
+         score: winnerScore,
+         ai: winner.ai,
+         level: winner.difficulty
+       }
+       this.winnerAndScore.push(objWS);
+       JSON._save('winner_and_score', { app: this.winnerAndScore });
+
+       // ?? really?
+       $('.refresh-page').on('click', function () {
+         location.reload();
+       });
+
+     }
+   }
+ }
+
+ makeMove(col, playerNo) {
     for (let row = 5; row >= 0; row--) {
       if (this.board[row][col] == 0) {
         this.board[row][col] = playerNo;
@@ -133,7 +134,7 @@ class Board extends Base {
     }
   }
 
-  //checkHorizontal 
+  //checkHorizontal
   // checkVictory(row, col) {
 
   //   let count = 1;
@@ -158,14 +159,14 @@ class Board extends Base {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter1++
         col++
-      } 
+      }
       return counter1;
     }
     function checkColLeft(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter1++
         col--
-      } 
+      }
       return counter1;
     }
     //Checks the row up
@@ -177,7 +178,7 @@ class Board extends Base {
         } else {
           row++
         }
-      } 
+      }
     }
     //checks diagonals upper left to right
     function checkColUpperDiagonalLeft(row, col) {
@@ -189,7 +190,7 @@ class Board extends Base {
           col--
           row--
         }
-      } 
+      }
       return counter3;
     }
     //checks diagonals upper right to left
@@ -200,9 +201,9 @@ class Board extends Base {
           break;
         } else {
         col++
-        row++ 
-        }     
-      } 
+        row++
+        }
+      }
       return counter3;
     }
     //checks diagonals upper left to right
@@ -215,7 +216,7 @@ class Board extends Base {
           col++
           row--
         }
-      } 
+      }
       return counter4;
     }
     //checks diagonals upper right to left
@@ -226,22 +227,22 @@ class Board extends Base {
           break;
         } else {
         col--
-        row++ 
-        }     
-      } 
+        row++
+        }
+      }
       return counter4;
     }
     checkColRight(row, col);
     checkColLeft(row, col);
-    checkRowUp(row, col); 
+    checkRowUp(row, col);
     checkColUpperDiagonalLeft(row, col);
     checkColLowerDiagonalRight(row, col);
     checkColLowerDiagonalLeft(row, col);
     checkColUpperDiagonalRight(row, col);
 
-    if (counter1 >= 4 || 
-        counter2 >= 4 || 
-        counter3 >= 4 || 
+    if (counter1 >= 4 ||
+        counter2 >= 4 ||
+        counter3 >= 4 ||
         counter4 >= 4) {
       return true;
     }
