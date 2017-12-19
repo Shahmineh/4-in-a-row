@@ -6,8 +6,8 @@ let player1;
 let player2;
 
 $('.spela-btn').on('click', function () {
-  player1 = new Computer({ name: "player 1", color: "red", ai: false, difficulty: null, playerNo: 1, playerEl: '.p1-info' });
-  player2 = new Computer({ name: "player 2", color: "yellow", ai: false, difficulty: null, playerNo: 2, playerEl: '.p2-info' });
+  player1 = new Computer({ name: "player 1", color: "red",  playerNo: 1, playerEl: '.p1-info' });
+  player2 = new Computer({ name: "player 2", color: "yellow",  playerNo: 2, playerEl: '.p2-info' });
   player1.render('.p1-info');
   player2.render('.p2-info');
 });
