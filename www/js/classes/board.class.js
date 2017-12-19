@@ -106,6 +106,9 @@ class Board extends Base {
          level: winner.difficulty
        }
        this.winnerAndScore.push(objWS);
+       JSON._load('winner_and_score').then((data) => {
+        this.winnerAndScore = data.app;
+      });
        JSON._save('winner_and_score', { app: this.winnerAndScore });
 
        // ?? really?
