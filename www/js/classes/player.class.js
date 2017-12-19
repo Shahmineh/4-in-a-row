@@ -35,7 +35,7 @@ class Player extends Base {
     }
 
     isAI() {
-        if (!this.ai) { return "checked" };
+        if (this.ai) { return "checked" };
     }
 
 
@@ -100,18 +100,18 @@ class Player extends Base {
 
           <div class="form-check mt-3">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input ai-check" ${this.isAI()}> Play with human
+              <input type="checkbox" class="form-check-input ai-check" ${this.isAI()}> Play with computer
             </label>
           </div>
           <div class="mt-3">
-          <select class="player-difficulty mb-2 mr-sm-2 mb-sm-0">
+          <select class="player-difficulty mb-2 mr-sm-2 mb-sm-0 d-none">
               <option value="0">Play with computer</option>
               <option value="1">Easy</option>
               <option value="2">Hard</option>
             </select>
           </div>
           
-          <div class="color_chosen">
+          <div class="color_chosen d-none">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
               <div class="btn-group mr-2" role="group" aria-label="First group">
                 <a type="button" class="btn btn-dark color" color="black"></a>
