@@ -99,14 +99,16 @@ class Board extends Base {
        let objWS = {
          name: winnerName,
          score: winnerScore,
-         ai: winner.ai,
-         level: winner.difficulty
+         
        }
-       this.winnerAndScore.push(objWS);
+       
        JSON._load('winner_and_score').then((data) => {
         this.winnerAndScore = data.app;
+        this.winnerAndScore.push(objWS);
+        JSON._save('winner_and_score', { app: this.winnerAndScore });
       });
-       JSON._save('winner_and_score', { app: this.winnerAndScore });
+      
+       
 
        // ?? really?
        $('.refresh-page').on('click', function () {
