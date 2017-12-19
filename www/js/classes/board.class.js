@@ -147,19 +147,6 @@ class Board extends Base {
     }
   }
 
-  //checkHorizontal
-  // checkVictory(row, col) {
-
-  //   let count = 1;
-  //   let val = this.board[row][col];
-  //   for (let i = row - 1; i >= 0; i--) {
-  //     if (this.board[i][col] == val) count++;
-  //     else break;
-  //   }
-  //   if (count >= 4) return true;
-  //   else return false;
-  // }
-
   checkForWin(row, col) {
     let counter1 = -1;
     let counter2 = 0;
@@ -260,8 +247,5 @@ class Board extends Base {
       return true;
     }
   }
-
-
-
 
 } // /class board

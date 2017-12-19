@@ -65,25 +65,7 @@ class Player extends Base {
     logical() {
         // player.ai = false;
         // player
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     template() {
@@ -92,13 +74,13 @@ class Player extends Base {
         <div class="card-body">
           <h4 class="card-title" for="player1name">Spelare ${this.playerNo}</h4>
           <div class="input-group">
-            <span class="input-group-addon" >Namn</span>
+            <span class="input-group-addon">Namn</span>
             <input type="text" class="form-control player-name" value="${this.name}">
           </div>
 
           <div class="form-check mt-3">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input ai-check" > Play with computer
+              <input type="checkbox" class="form-check-input ai-check"> Spela som datorspelare
             </label>
           </div>
           <div class="mt-3">
