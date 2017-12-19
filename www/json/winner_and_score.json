@@ -1,63 +1,9 @@
 {
   "app": [
     {
-      "name": "player 1",
-      "score": 7,
-      "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 1",
-      "score": 7,
-      "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 1",
-      "score": 7,
-      "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 1",
-      "score": 7,
-      "ai": false,
-      "level": "0"
-    },
-    {
       "name": "player 2",
-      "score": 8,
+      "score": 16,
       "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 1",
-      "score": 13,
-      "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 2",
-      "score": 12,
-      "ai": false,
-      "level": "2"
-    },
-    {
-      "name": "player 1",
-      "score": 7,
-      "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 2",
-      "score": 8,
-      "ai": false,
-      "level": null
-    },
-    {
-      "name": "player 1",
-      "score": 13,
-      "ai": true,
       "level": null
     }
   ]
