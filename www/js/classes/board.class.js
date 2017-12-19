@@ -163,6 +163,8 @@ class Board extends Base {
   checkForWin(row, col) {
     let counter1 = -1;
     let counter2 = 0;
+    let counter3 = -1;
+    let counter4 = -1;
     let that = this;
 
     //checks cols to right
@@ -191,11 +193,70 @@ class Board extends Base {
         }
       } 
     }
+    //checks diagonals upper left to right
+    function checkColUpperDiagonalLeft(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter3++
+        if (row == 0) {
+          break;
+        } else {
+          col--
+          row--
+        }
+      } 
+      return counter3;
+    }
+    //checks diagonals upper right to left
+    function checkColLowerDiagonalRight(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter3++
+        if (row == 5) {
+          break;
+        } else {
+        col++
+        row++ 
+        }     
+      } 
+      return counter3;
+    }
+    //checks diagonals upper left to right
+    function checkColLowerDiagonalLeft(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter4++
+        if (row == 0) {
+          break;
+        } else {
+          col++
+          row--
+        }
+      } 
+      return counter4;
+    }
+    //checks diagonals upper right to left
+    function checkColUpperDiagonalRight(row, col) {
+      while (that.board[row][col] == that.currentPlayerNo) {
+        counter4++
+        if (row == 5) {
+          break;
+        } else {
+        col--
+        row++ 
+        }     
+      } 
+      return counter4;
+    }
     checkColRight(row, col);
     checkColLeft(row, col);
     checkRowUp(row, col); 
+    checkColUpperDiagonalLeft(row, col);
+    checkColLowerDiagonalRight(row, col);
+    checkColLowerDiagonalLeft(row, col);
+    checkColUpperDiagonalRight(row, col);
 
-    if ( counter1 >= 4 || counter2 >= 4) {
+    if (counter1 >= 4 || 
+        counter2 >= 4 || 
+        counter3 >= 4 || 
+        counter4 >= 4) {
       return true;
     }
   }
