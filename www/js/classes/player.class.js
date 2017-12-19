@@ -130,15 +130,16 @@ class Player extends Base {
 
     template2() {
         return `
-    <div class="card">
-    <div class="card-header">
-    </div>
-    <div class="card-block">
-    <p>${this.name}</p>
-    <div class="badge player${this.playerNo}">${this.name}</div>
-    </div>
-  </div>
-    `;
+          <div class="card current-player">
+            <div class="card-block">
+              <h2>
+              <div class="current-player-coin player${this.playerNo}"></div>
+                ${this.name}
+                
+              </h2>
+            </div>
+          </div>
+          `;
     }
 
 }
