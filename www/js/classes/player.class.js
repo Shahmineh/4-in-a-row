@@ -35,7 +35,7 @@ class Player extends Base {
     }
 
     isAI() {
-        if (!this.ai) { return "checked" };
+        if (this.ai) { return "checked" };
     }
 
 
