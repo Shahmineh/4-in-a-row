@@ -43,15 +43,6 @@ class Board extends Base {
       holder.append($row);
     }
 
-
-    // for (let i = 0; i < this.rows; i++) {
-    //   let row = $('<div>').addClass('board-row');
-    //   for (let j = 0; j < this.cols; j++) {
-    //     let col = $('<div>').addClass('board-col empty').attr('data-row', i).attr('data-col', j);
-    //     row.append(col);
-    //   }
-    //   holder.append(row);
-    // }
   } // /renderBoard
 
   setupHandler() {
@@ -84,13 +75,7 @@ class Board extends Base {
 
           // Short hand If statement
           that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
-          // if (that.currentPlayerNo == 1) {
-          //   that.currentPlayerNo = 2;
-          // } else {
-          //   that.currentPlayerNo = 1;
-          // }
 
-          //console.log(that.move);
           that.move++;
 
         } else {
@@ -261,18 +246,7 @@ class Board extends Base {
     }
   }
 
-  checkHorizontal() {
-
-  }
 
 
 
-
-
-
-
-
-
-
-
-}
+} // /class board
