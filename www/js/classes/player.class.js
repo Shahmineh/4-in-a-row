@@ -4,8 +4,8 @@ class Player extends Base {
         super();
         this.name = config.name;
         this.color = config.color;
-        this.ai = config.ai;
-        this.difficulty = config.difficulty;
+       // this.ai = config.ai;
+       // this.difficulty = config.difficulty;
         this.playerNo = config.playerNo;
         this.playerEl = config.playerEl;
     }
@@ -13,20 +13,20 @@ class Player extends Base {
     render(el, templateNo) {
         super.render(el, templateNo);
 
-        let levelEl = $(el).find(".player-difficulty");
-        if (levelEl.length > 0) {
-            levelEl.val(this.difficulty);
-        }
+        // let levelEl = $(el).find(".player-difficulty");
+        // if (levelEl.length > 0) {
+        //     levelEl.val(this.difficulty);
+        // }
 
         let colorEl = $(el).find(".color[color='" + this.color + "']");
         if (colorEl.length > 0) {
             colorEl.addClass("active");
         }
 
-        let aiEl = $(el).find(".ai-check");
-        if (aiEl.length > 0) {
-            aiEl.val(this.ai);
-        }
+        // let aiEl = $(el).find(".ai-check");
+        // if (aiEl.length > 0) {
+        //     aiEl.val(this.ai);
+        // }
 
         let nameEl = $(el).find(".player-name");
         if (nameEl.length > 0) {
@@ -34,9 +34,9 @@ class Player extends Base {
         }
     }
 
-    isAI() {
-        if (this.ai) { return "checked" };
-    }
+    // isAI() {
+    //     if (this.ai) { return "checked" };
+    // }
 
 
     click(element, instances) {
@@ -56,8 +56,6 @@ class Player extends Base {
 
     }
     keyup(element, instances, event) {
-        // add a new cat or owner if we press enter in the name fields
-        // (which -> the code of the key pressed, enter is 13)
         if (element.hasClass('player-name')) {
             this.name = $(element).val();
         }
@@ -100,7 +98,7 @@ class Player extends Base {
 
           <div class="form-check mt-3">
             <label class="form-check-label">
-              <input type="checkbox" class="form-check-input ai-check" ${this.isAI()}>&nbsp; Datorspelare
+              <input type="checkbox" class="form-check-input ai-check" > Play with computer
             </label>
           </div>
           <div class="mt-3">

@@ -1,16 +1,8 @@
 {
   "app": [
     {
-      "name": "player 1",
-      "score": 17,
-      "ai": true,
-      "level": null
-    },
-    {
       "name": "player 2",
-      "score": 20,
-      "ai": false,
-      "level": null
+      "score": 24
     }
   ]
 }

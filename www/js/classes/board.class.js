@@ -18,9 +18,6 @@ class Board extends Base {
     this.player1.render('.my-turn', 2);
     this.move = 1;
     this.winnerAndScore = [];
-    /*return JSON._load('winner_and_score').then((data) => {
-      this.winnerAndScore = data.app;
-    });*/
   }
 
 
