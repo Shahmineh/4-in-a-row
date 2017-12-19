@@ -72,16 +72,5 @@ class HighScore extends Base {
 
 
 
-    template() {
-        return `
-        <tr>
-        <th class="${this.vsHuman.ranking}">${this.vsHuman.ranking}</th>
-        <td class="${this.vsHuman.name}">${this.vsHuman.name}</td>
-        <td class="${this.vsHuman.score}">${this.vsHuman.score}</td>
-        </tr>
-                 
-        `
-    }
-
 }
 
