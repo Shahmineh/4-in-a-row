@@ -12,9 +12,10 @@ class HighScore extends Base {
         return JSON._load('winner_and_score')
             .then((data) => {
                 this.highScoreList = data.app;
+                this.sortList(this.highScoreList);
                 this.vsHuman = this.vsHumanFilter(this.highScoreList);
-                this.vsEasy = this.vsEasyFilter();
-                this.vsHard = this.vsHardFilter();
+                this.vsEasy = this.vsEasyFilter(this.highScoreList);
+                this.vsHard = this.vsHardFilter(this.highScoreList);
             });
     }
 
@@ -44,19 +45,19 @@ class HighScore extends Base {
         return humanWinner;
     }
 
-    vsEasyFilter() {
+    vsEasyFilter(list) {
         let easyWinner = [];
-        for (let winner of this.highScoreList) {
-            if (!winner.ai && winner.level == 1 ) {
+        for (let winner of list) {
+            if (!winner.ai && winner.level == 1) {
                 easyWinner.push(winner);
             }
         }
         return easyWinner;
     }
 
-    vsHardFilter() {
+    vsHardFilter(list) {
         let hardWinner = [];
-        for (let winner of this.highScoreList) {
+        for (let winner of list) {
             if (!winner.ai && winner.level == 2) {
                 hardWinner.push(winner);
             }
@@ -64,7 +65,10 @@ class HighScore extends Base {
         return hardWinner;
     }
 
-    ranking() {
+    sortList(array) {
+        array.sort(function (a, b) {
+            return a.score - b.score;
+        })
 
     }
 
@@ -72,7 +76,7 @@ class HighScore extends Base {
 
 
 
-    
+
 
 }
 
