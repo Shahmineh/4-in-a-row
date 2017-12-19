@@ -92,6 +92,7 @@ class Board extends Base {
 
           //console.log(that.move);
           that.move++;
+          
 
         } else {
           $("#winner-modal").modal();
