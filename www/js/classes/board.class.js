@@ -77,6 +77,7 @@ class Board extends Base {
           that.currentPlayerNo = that.currentPlayerNo == 1 ? 2 : 1;
 
           that.move++;
+          
 
         } else {
           $("#winner-modal").modal();

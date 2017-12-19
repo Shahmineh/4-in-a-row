@@ -12,7 +12,7 @@ class HighScore extends Base {
         return JSON._load('winner_and_score')
             .then((data) => {
                 this.highScoreList = data.app;
-                this.vsHuman = this.vsHunamFilter();
+                this.vsHuman = this.vsHumanFilter(this.highScoreList);
                 this.vsEasy = this.vsEasyFilter();
                 this.vsHard = this.vsHardFilter();
             });
@@ -34,10 +34,10 @@ class HighScore extends Base {
         $(el).append($(html));
     }
 
-    vsHunamFilter() {
+    vsHumanFilter(list) {
         let humanWinner = [];
-        for (let winner of this.highScoreList) {
-            if (winner.ai) {
+        for (let winner of list) {
+            if (!winner.ai) {
                 humanWinner.push(winner);
             }
         }
