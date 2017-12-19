@@ -18,9 +18,9 @@ class Board extends Base {
     this.player1.render('.my-turn', 2);
     this.move = 1;
     this.winnerAndScore = [];
-    return JSON._load('winner_and_score').then((data) => {
+    /*return JSON._load('winner_and_score').then((data) => {
       this.winnerAndScore = data.app;
-    });
+    });*/
   }
 
 
@@ -80,10 +80,19 @@ class Board extends Base {
       // is to finish the game, and do the rest tasks.
       if (!this.checkForWin(row, col)) {
 
-       // Short hand If statement
+       // Change player
        this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
-
+       this.currentPlayer = this.currentPlayerNo == 1 ? this.player1 : this.player2;
        this.move++;
+
+       // If the current player is a computer then ask it to make a move
+       console.log("currentPlayer",this.currentPlayer)
+       console.log("is a bot",this.currentPlayer instanceof Computer);
+       if(this.currentPlayer instanceof Computer){
+       	 this.currentPlayer.decideMove();
+       }
+
+      
      } else {
        $("#winner-modal").modal();
        $('#winner-name').html(this.getWinner(this.currentPlayerNo).name);
@@ -104,7 +113,11 @@ class Board extends Base {
          location.reload();
        });
 
-     }
+     } 
+     return true;
+   }
+   else {
+     return false;
    }
  }
 

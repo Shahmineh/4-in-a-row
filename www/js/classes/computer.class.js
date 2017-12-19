@@ -1,15 +1,17 @@
 class Computer extends Player{
-    constructor(){
-        super();
-        const name=computer;
-        this.ai=ai;
-        this.difficulty=difficulty;
+    constructor(config){
+        super(config);
     }
 
-    AIeasy(){
-        
+    decideMove(){
+        const that = this;
+        setTimeout(() => { 
+            let col;
+            do {
+              col = Math.floor(Math.random() * 7);
+            }
+            while(!that.board.playColumn(col));
+        }, 1500);
     }
-    AIhard(){
 
-    }
 }
