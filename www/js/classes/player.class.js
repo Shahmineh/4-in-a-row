@@ -18,10 +18,10 @@ class Player extends Base {
         //     levelEl.val(this.difficulty);
         // }
 
-        let colorEl = $(el).find(".color[color='" + this.color + "']");
-        if (colorEl.length > 0) {
-            colorEl.addClass("active");
-        }
+        // let colorEl = $(el).find(".color[color='" + this.color + "']");
+        // if (colorEl.length > 0) {
+        //     colorEl.addClass("active");
+        // }
 
         // let aiEl = $(el).find(".ai-check");
         // if (aiEl.length > 0) {
@@ -39,22 +39,22 @@ class Player extends Base {
     // }
 
 
-    click(element, instances) {
-        if (element.hasClass('color')) {
-            this.color = $(element).attr('color');
-            this.render(this.playerEl);
-        }
-    }
+    // click(element, instances) {
+    //     if (element.hasClass('color')) {
+    //         this.color = $(element).attr('color');
+    //         this.render(this.playerEl);
+    //     }
+    // }
 
-    change(element, instances) {
-        if (element.hasClass('ai-check')) {
-            this.ai = $(element).prop('checked');
-        }
-        if (element.hasClass('player-difficulty')) {
-            this.difficulty = $(element).val();
-        }
+    // change(element, instances) {
+    //     if (element.hasClass('ai-check')) {
+    //         this.ai = $(element).prop('checked');
+    //     }
+    //     if (element.hasClass('player-difficulty')) {
+    //         this.difficulty = $(element).val();
+    //     }
 
-    }
+    // }
     keyup(element, instances, event) {
         if (element.hasClass('player-name')) {
             this.name = $(element).val();
@@ -62,10 +62,20 @@ class Player extends Base {
     }
 
 
-    logical() {
-        // player.ai = false;
-        // player
-    }
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     template() {
