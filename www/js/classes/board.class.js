@@ -19,6 +19,7 @@ class Board extends Base {
     this.player1.render('.my-turn', 2);
     this.move = 1;
     this.winnerAndScore = [];
+    this.gameover = false;
   }
 
 
@@ -47,7 +48,10 @@ class Board extends Base {
     let that = this;
     // MouseEnter func
     $(document).on('mouseenter', '.empty', function () {
-      if ( that.currentPlayer instanceof Computer) {
+      if (that.gameover == true) {
+        return null;
+      }
+      else if ( that.currentPlayer instanceof Computer) {
         return null;
       } else {
         let col = $(this).attr('data-col');
@@ -64,7 +68,7 @@ class Board extends Base {
 
     $(document).on('click', '.board-col', function(){
       let col = $(this).attr('data-col');
-      if ( !(that.currentPlayer instanceof Computer) ) {
+      if ( !(that.currentPlayer instanceof Computer) && that.gameover == false) {
         that.playColumn(col);
       } else {
         return false;
@@ -76,11 +80,6 @@ class Board extends Base {
   playColumn(col){
 
     let row = this.getRowNow(col);
-    if (this.currentPlayerNo == 2) {
-     this.player1.render('.my-turn', 2);
-    } else {
-     this.player2.render('.my-turn', 2);
-    }
     if (this.makeMove(col, this.currentPlayerNo)) {
       this.renderBoard();
 
@@ -89,6 +88,11 @@ class Board extends Base {
           $("#draw-modal").modal();
         } else {
           // Change player
+          if (this.currentPlayerNo == 2) {
+           this.player1.render('.my-turn', 2);
+          } else {
+           this.player2.render('.my-turn', 2);
+          }
           this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
           this.currentPlayer = this.currentPlayerNo == 1 ? this.player1 : this.player2;
           this.move++;
@@ -144,8 +148,10 @@ class Board extends Base {
 
   getWinner(PlayerNo) {
     if (PlayerNo == 2) {
+      this.gameover = true;
       return this.player2;
     } else {
+      this.gameover = true;
       return this.player1;
     }
   }
