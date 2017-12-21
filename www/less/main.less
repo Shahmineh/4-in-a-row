@@ -6,58 +6,58 @@
 
 main {
 
-  //Game design only //
-  div.board-holder {
-    overflow: hidden;
-    border-radius: 10px;
-    max-width: 960px;
-    .board-game-shadow;
+//Game design only //
+div.board-holder {
+  overflow: hidden;
+  border-radius: 10px;
+  max-width: 960px;
+  .board-game-shadow;
+}
+
+div.board {
+  // display: none;
+  width: 1050px;
+  height: 900px;
+  transform-origin: 0 0;
+}
+
+div.bullet-holder {
+  width: 150px;
+  height: 150px;
+  float: left;
+}
+.spela-btn {
+  font-size: 5rem;
+  padding: 10% 20%;
+  border-radius: 10px;
+  align-self: center;
+}
+div.board-col {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  margin: 10px;
+  float:left;
+  &.empty {
+    .board-game-shadow-inset;
+    background: white;
+  }
+  &.player1 {
+    background: #dc3545;
+    .board-coin-shadow;
+  }
+  &.player1-hover {
+    background: #dd5e6a;
   }
 
-  div.board {
-    // display: none;
-    width: 1050px;
-    height: 900px;
-    transform-origin: 0 0;
+  &.player2 {
+    background: #fbde4b;
+    .board-coin-shadow;
   }
-
-  div.bullet-holder {
-    width: 150px;
-    height: 150px;
-    float: left;
+  &.player2-hover {
+    background: #e9db94;
   }
-  .spela-btn {
-    font-size: 5rem;
-    padding: 10% 20%;
-    border-radius: 10px;
-    align-self: center;
-  }
-  div.board-col {
-    border-radius: 50%;
-    width: 130px;
-    height: 130px;
-    margin: 10px;
-    float:left;
-    &.empty {
-      .board-game-shadow-inset;
-      background: white;
-    }
-    &.player1 {
-      background: #dc3545;
-      .board-coin-shadow;
-    }
-    &.player1-hover {
-      background: #dd5e6a;
-    }
-
-    &.player2 {
-      background: #fbde4b;
-      .board-coin-shadow;
-    }
-    &.player2-hover {
-      background: #e9db94;
-    }
-  }
+}
 
 .player1{
   background: #dc3545;
@@ -89,6 +89,7 @@ main {
     text-align: center;
   }
 }
+
 #enteringNameModal, #winner-modal, #draw-modal {
   h5 {
     color: #333;
@@ -107,15 +108,15 @@ main {
   }
 }
 
-  // /Game design
-  .highscore_page{
-    h3{
-      color:white;
-    }
-    .table{
-      color: black !important;
-    }
+// /Game design
+.highscore_page{
+  h3{
+    color:white;
   }
+  .table{
+    color: black !important;
+  }
+}
 } // /end of Main {}
 
 

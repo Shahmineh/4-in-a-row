@@ -41,7 +41,6 @@ class Board extends Base {
       }
       holder.append($row);
     }
-
   } // /renderBoard
 
   setupHandler() {
@@ -74,11 +73,9 @@ class Board extends Base {
         return false;
       }
     });
-
-  }
+  } // /setup handler
 
   playColumn(col){
-
     let row = this.getRowNow(col);
     if (this.makeMove(col, this.currentPlayerNo)) {
       this.renderBoard();
@@ -126,7 +123,7 @@ class Board extends Base {
    else {
      return false;
    }
- }
+ } // /play Column
 
  makeMove(col, playerNo) {
     for (let row = 5; row >= 0; row--) {
@@ -135,7 +132,6 @@ class Board extends Base {
         return true;
       }
     }
-
   }
 
   getRowNow(col) {
@@ -155,6 +151,7 @@ class Board extends Base {
       return this.player1;
     }
   }
+
   playNewGame() {
     let that = this;
     $('.gamestatusbtn').text('Spela igen').on('click', function(event) {
@@ -162,6 +159,7 @@ class Board extends Base {
       $('#enteringNameModal').modal();
     });
   }
+
   checkForDraw() {
     let counter = 0;
     for (let i = 0; i < this.board.length; i++) {
@@ -175,6 +173,7 @@ class Board extends Base {
       return true;
     }
   }
+
   checkForWin(row, col) {
     let counter1 = -1;
     let counter2 = 0;
@@ -182,14 +181,14 @@ class Board extends Base {
     let counter4 = -1;
     let that = this;
 
-    //checks cols to right
+    //Check horizontals part 1
     function checkColRight(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter1++
         col++
       }
       return counter1;
-    }
+    } // Check horizontals part 2
     function checkColLeft(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter1++
@@ -197,7 +196,8 @@ class Board extends Base {
       }
       return counter1;
     }
-    //Checks the row up
+
+    // Checks vertical
     function checkRowUp(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter2++
@@ -208,7 +208,8 @@ class Board extends Base {
         }
       }
     }
-    //checks diagonals upper left to right
+
+    //checks diagonal upper left -> down right, part 1
     function checkColUpperDiagonalLeft(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter3++
@@ -221,7 +222,7 @@ class Board extends Base {
       }
       return counter3;
     }
-    //checks diagonals upper right to left
+    //checks diagonals upper left-> down right, part 2
     function checkColLowerDiagonalRight(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter3++
@@ -234,7 +235,7 @@ class Board extends Base {
       }
       return counter3;
     }
-    //checks diagonals upper left to right
+    //checks diagonals lower left-> upper right, part 1
     function checkColLowerDiagonalLeft(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter4++
@@ -247,7 +248,7 @@ class Board extends Base {
       }
       return counter4;
     }
-    //checks diagonals upper right to left
+    //checks diagonals lower left-> upper right, part 2
     function checkColUpperDiagonalRight(row, col) {
       while (that.board[row][col] == that.currentPlayerNo) {
         counter4++
