@@ -113,7 +113,7 @@ class Board extends Base {
        name: winnerName,
        score: winnerScore,
       }
-
+      this.playNewGame();
        JSON._load('winner_and_score').then((data) => {
         this.winnerAndScore = data.app;
         this.winnerAndScore.push(objWS);
@@ -154,6 +154,13 @@ class Board extends Base {
       this.gameover = true;
       return this.player1;
     }
+  }
+  playNewGame() {
+    let that = this;
+    $('.gamestatusbtn').text('Spela igen').on('click', function(event) {
+      event.preventDefault();
+      $('#enteringNameModal').modal();
+    });
   }
   checkForDraw() {
     let counter = 0;
