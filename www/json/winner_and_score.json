@@ -1,105 +1,24 @@
 {
   "app": [
     {
-      "name": "player 2",
-      "score": 22
+      "name": "Shamin",
+      "score": 8
     },
     {
-      "name": "player 2",
-      "score": 26
+      "name": "Martin",
+      "score": 10
     },
     {
-      "name": "player 1",
+      "name": "Dennis",
       "score": 21
     },
     {
-      "name": "player 1",
+      "name": "Roger",
       "score": 21
     },
     {
-      "name": "player 1",
+      "name": "Hui",
       "score": 15
-    },
-    {
-      "name": "player 1",
-      "score": 23
-    },
-    {
-      "name": "player 1",
-      "score": 11
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 19
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7,
-      "player": 1
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "Shamin",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 9
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "Shamin",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
-    },
-    {
-      "name": "player 1",
-      "score": 7
     },
     {
       "name": "player 1",
