@@ -17,23 +17,16 @@ $('.start-game').on('click', function () {
   $('.gamestatusbtn').show();
   board = new Board(player1, player2);
   game = new Game(board, player1, player2);
-  //game.start();   
-  //If we still have time. Set up game start in main.js, and move board, player render to Game. Move the code and make the process more logical.
   $('.spela-btn').hide();
   $('.board').removeClass('d-flex');
 });
-
-// JSON._classes(Game, Board, Player);
-
 
 // Scaling function so the board fits the browser widnow
 function scale() {
   let orgW = 1050, orgH = 900;
   let w = $('.game-div').width();
   let h = $(window).height();
-  // Adjust h for headers, margins etc
   h -= $('#mainNav').outerHeight() + 120;
-  // This scaling would fit to width
   let wScale = w / orgW;
   // This scaling would fit to height
   let hScale = h / orgH;
@@ -46,7 +39,6 @@ function scale() {
   $('.board-holder').width(orgW * scaling);
   $('.board-holder').height(orgH * scaling);
 }
-
 // Run on page load
 scale();
 // Run every time the size changes
