@@ -119,13 +119,6 @@ class Board extends Base {
         this.winnerAndScore.push(objWS);
         JSON._save('winner_and_score', { app: this.winnerAndScore });
       });
-      
-       
-
-       // ?? really?
-       $('.refresh-page').on('click', function () {
-         location.reload();
-       });
 
      } 
      return true;
