@@ -62,7 +62,7 @@ class Player extends Base {
     }
 
 
-   
+
 
 
 
@@ -100,7 +100,7 @@ class Player extends Base {
               <option value="2">Hard</option>
             </select>
           </div>
-          
+
           <div class="color_chosen d-none">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
               <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -125,7 +125,7 @@ class Player extends Base {
               <h2>
               <div class="current-player-coin player${this.playerNo}"></div>
                 ${this.name}
-                
+
               </h2>
             </div>
           </div>
