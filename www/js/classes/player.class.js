@@ -82,7 +82,7 @@ class Player extends Base {
         return `
         <div class="card ">
         <div class="card-body">
-          <h4 class="card-title" for="player1name">Spelare ${this.playerNo}</h4>
+          <h4 class="card-title" for="player1name"><div class="player${this.playerNo} winner-player-coin"></div> Spelare ${this.playerNo}</h4>
           <div class="input-group">
             <span class="input-group-addon">Namn</span>
             <input type="text" class="form-control player-name" value="${this.name}">
