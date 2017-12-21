@@ -5,6 +5,7 @@ class Board extends Base {
     this.player1 = player1;
     this.player2 = player2;
     this.currentPlayerNo = 1;
+    this.currentPlayer = player1;
     this.board = [
       [0, 0, 0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0, 0, 0],
@@ -46,9 +47,10 @@ class Board extends Base {
     let that = this;
     // MouseEnter func
     $(document).on('mouseenter', '.empty', function () {
-      if ( that.currentPlayer instanceof Computer ) {
+      if ( that.currentPlayer instanceof Computer) {
         return null;
       } else {
+        console.log(game.currentPlayer instanceof Computer);
         let col = $(this).attr('data-col');
         let row = that.getRowNow(col); 
         $(`[data-row='${row}'][data-col='${col}']`).addClass('player' + that.currentPlayerNo + '-hover'); 
@@ -58,7 +60,7 @@ class Board extends Base {
     $(document).on('mouseleave', '.board-col', function () {
       let col = $(this).attr('data-col');
       let row = that.getRowNow(col);
-      $(`[data-row='${row}'][data-col='${col}']`).removeClass('player1-hover');
+      $(`[data-row='${row}'][data-col='${col}']`).removeClass('player1-hover').removeClass('player2-hover');
     });
 
     $(document).on('click', '.board-col', function(){
