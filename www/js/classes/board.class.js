@@ -46,18 +46,28 @@ class Board extends Base {
     let that = this;
     // MouseEnter func
     $(document).on('mouseenter', '.empty', function () {
-      let col = $(this).attr('data-col');
-      $(this).addClass('player' + that.currentPlayerNo + '-hover');
+      if ( that.currentPlayer instanceof Computer ) {
+        return null;
+      } else {
+        let col = $(this).attr('data-col');
+        let row = that.getRowNow(col); 
+        $(`[data-row='${row}'][data-col='${col}']`).addClass('player' + that.currentPlayerNo + '-hover'); 
+    }
     });
 
     $(document).on('mouseleave', '.board-col', function () {
       let col = $(this).attr('data-col');
-      $(this).removeClass('player1-hover').removeClass('player2-hover');
+      let row = that.getRowNow(col);
+      $(`[data-row='${row}'][data-col='${col}']`).removeClass('player1-hover');
     });
 
     $(document).on('click', '.board-col', function(){
       let col = $(this).attr('data-col');
-      that.playColumn(col);
+      if ( !(that.currentPlayer instanceof Computer) ) {
+        that.playColumn(col);
+      } else {
+        return false;
+      }
     });
 
   }
