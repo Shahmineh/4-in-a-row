@@ -55,8 +55,8 @@ class Board extends Base {
         return null;
       } else {
         let col = $(this).attr('data-col');
-        let row = that.getRowNow(col); 
-        $(`[data-row='${row}'][data-col='${col}']`).addClass('player' + that.currentPlayerNo + '-hover'); 
+        let row = that.getRowNow(col);
+        $(`[data-row='${row}'][data-col='${col}']`).addClass('player' + that.currentPlayerNo + '-hover');
     }
     });
 
@@ -105,13 +105,13 @@ class Board extends Base {
      } else {
       $("#winner-modal").modal();
       $('#winner-name').html(this.getWinner(this.currentPlayerNo).name);
+      $('.winner-player-coin').addClass('player' + this.currentPlayerNo);
       let winnerScore = this.move;
       let winner = this.getWinner(this.currentPlayerNo);
       let winnerName = winner.name;
       let objWS = {
        name: winnerName,
        score: winnerScore,
-       
       }
       this.playNewGame();
        JSON._load('winner_and_score').then((data) => {
@@ -120,7 +120,7 @@ class Board extends Base {
         JSON._save('winner_and_score', { app: this.winnerAndScore });
       });
 
-     } 
+     }
      return true;
    }
    else {
