@@ -50,7 +50,6 @@ class Board extends Base {
       if ( that.currentPlayer instanceof Computer) {
         return null;
       } else {
-        console.log(game.currentPlayer instanceof Computer);
         let col = $(this).attr('data-col');
         let row = that.getRowNow(col); 
         $(`[data-row='${row}'][data-col='${col}']`).addClass('player' + that.currentPlayerNo + '-hover'); 
@@ -85,34 +84,31 @@ class Board extends Base {
     if (this.makeMove(col, this.currentPlayerNo)) {
       this.renderBoard();
 
-      // there are problems of checkVictory(). The point of call this function here
-      // is to finish the game, and do the rest tasks.
       if (!this.checkForWin(row, col)) {
+        if ( this.checkForDraw() ) {
+          $("#draw-modal").modal();
+        } else {
+          // Change player
+          this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
+          this.currentPlayer = this.currentPlayerNo == 1 ? this.player1 : this.player2;
+          this.move++;
 
-       // Change player
-       this.currentPlayerNo = this.currentPlayerNo == 1 ? 2 : 1;
-       this.currentPlayer = this.currentPlayerNo == 1 ? this.player1 : this.player2;
-       this.move++;
-
-       // If the current player is a computer then ask it to make a move
-       console.log("currentPlayer",this.currentPlayer)
-       console.log("is a bot",this.currentPlayer instanceof Computer);
-       if(this.currentPlayer instanceof Computer){
-       	 this.currentPlayer.decideMove();
-       }
-
-      
+          // If the current player is a computer then ask it to make a move
+          if(this.currentPlayer instanceof Computer){
+          	 this.currentPlayer.decideMove();
+          }
+        }
      } else {
-       $("#winner-modal").modal();
-       $('#winner-name').html(this.getWinner(this.currentPlayerNo).name);
-       let winnerScore = this.move;
-       let winner = this.getWinner(this.currentPlayerNo);
-       let winnerName = winner.name;
-       let objWS = {
-         name: winnerName,
-         score: winnerScore,
-         
-       }
+      $("#winner-modal").modal();
+      $('#winner-name').html(this.getWinner(this.currentPlayerNo).name);
+      let winnerScore = this.move;
+      let winner = this.getWinner(this.currentPlayerNo);
+      let winnerName = winner.name;
+      let objWS = {
+       name: winnerName,
+       score: winnerScore,
+       
+      }
        
        JSON._load('winner_and_score').then((data) => {
         this.winnerAndScore = data.app;
@@ -160,7 +156,19 @@ class Board extends Base {
       return this.player1;
     }
   }
-
+  checkForDraw() {
+    let counter = 0;
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board.length; j++) {
+        if (this.board[i][j] == 0) {
+          counter++;
+        }
+      }
+    }
+    if (counter == 0) {
+      return true;
+    }
+  }
   checkForWin(row, col) {
     let counter1 = -1;
     let counter2 = 0;
