@@ -82,3 +82,43 @@ body main .fin_bild img {
 .exemple, .set-width {
   width: 350px;
 }
+
+hr.star-dark,
+hr.star-light {
+  max-width: 15rem;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top:solid .25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+hr.star-dark:after,
+hr.star-light:after {
+  position: relative;
+  top: -.8em;
+  display: inline-block;
+  padding: 0 .25em;
+  content: '\f005';
+  font-family: FontAwesome;
+  font-size: 2em;
+}
+
+hr.star-light {
+  border-color: #fff;
+  }
+
+hr.star-light:after {
+  color: #fff;
+  background-color: #4db2c6;
+  }
+
+hr.star-dark {
+  border-color: #4db2c6;
+}
+
+hr.star-dark:after {
+  color: #00a3b6;
+  background-color: #fff;
+}
