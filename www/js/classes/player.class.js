@@ -24,17 +24,17 @@ class Player extends Base {
 
     template() {
         return `
-        <div class="card ">
-        <div class="card-body">
-          <h4 class="card-title" for="player1name"><div class="player${this.playerNo} winner-player-coin"></div> Spelare ${this.playerNo}</h4>
+        <div class="card">
+        <div class="card-body pt-3">
+          <h4 class="card-title mb-md-4 mb-3 text-center" for="player1name"><div class="player${this.playerNo} winner-player-coin"></div> Spelare ${this.playerNo}</h4>
           <div class="input-group">
             <span class="input-group-addon">Namn</span>
             <input type="text" class="form-control player-name" value="${this.name}">
           </div>
 
           <div class="form-check mt-3">
-            <label class="form-check-label">
-              <input type="checkbox" class="form-check-input ai-check-${this.playerNo}"> Spela som datorspelare
+            <label class="form-check-label text-center">
+              <input type="checkbox" class="form-check-input ai-check-${this.playerNo}">&nbsp;&nbsp; Spela som datorspelare
             </label>
           </div>
           <div class="mt-3">
@@ -50,7 +50,6 @@ class Player extends Base {
               <h2>
               <div class="current-player-coin player${this.playerNo}"></div>
                 ${this.name}
-
               </h2>
             </div>
           </div>

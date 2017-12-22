@@ -3,9 +3,6 @@ class HighScore extends Base {
     constructor() {
         super();
         this.highScoreList = [];
-        // this.vsHuman = null;
-        // this.vsEasy = null;
-        // this.vsHard = null;
     }
 
     init() {
@@ -13,9 +10,6 @@ class HighScore extends Base {
             .then((data) => {
                 this.highScoreList = data.app;
                 this.sortList(this.highScoreList);
-                // this.vsHuman = this.vsHumanFilter(this.highScoreList);
-                // this.vsEasy = this.vsEasyFilter(this.highScoreList);
-                // this.vsHard = this.vsHardFilter(this.highScoreList);
             });
     }
 
@@ -29,41 +23,8 @@ class HighScore extends Base {
             html += "<td>" + list[i].score + "</td>";
             html += "</tr>";
         }
-
-
-
         $(el).append($(html));
     }
-
-    // vsHumanFilter(list) {
-    //     let humanWinner = [];
-    //     for (let winner of list) {
-    //         if (!winner.ai) {
-    //             humanWinner.push(winner);
-    //         }
-    //     }
-    //     return humanWinner;
-    // }
-
-    // vsEasyFilter(list) {
-    //     let easyWinner = [];
-    //     for (let winner of list) {
-    //         if (!winner.ai && winner.level == 1) {
-    //             easyWinner.push(winner);
-    //         }
-    //     }
-    //     return easyWinner;
-    // }
-
-    // vsHardFilter(list) {
-    //     let hardWinner = [];
-    //     for (let winner of list) {
-    //         if (!winner.ai && winner.level == 2) {
-    //             hardWinner.push(winner);
-    //         }
-    //     }
-    //     return hardWinner;
-    // }
 
     sortList(array) {
         array.sort(function (a, b) {
@@ -71,12 +32,5 @@ class HighScore extends Base {
         })
 
     }
-
-
-
-
-
-
-
 }
 
